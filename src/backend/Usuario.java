@@ -26,4 +26,16 @@ public class Usuario extends Pessoa{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
 }
