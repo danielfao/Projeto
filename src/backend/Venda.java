@@ -1,8 +1,8 @@
 package backend;
 
 public class Venda {
-	int idVenda;
+	/*int idVenda;
 	Usuario usuario;
-	Seguro seguro;
+	Seguro seguro;*/
 	
 }

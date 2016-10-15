@@ -1,9 +1,8 @@
 package backend;
 
-import java.util.Date;
-
+//import java.util.Date;
 public class Seguro /*implements IAlteraSeguro*/{
-	private int id, bonus;
+	/*private int id, bonus;
 	private Pessoa pessoaSeguro;
 	private Veiculo veiculoSeguro;
 	private Date inicioVigencia, finalVigencia;
@@ -109,5 +108,5 @@ public class Seguro /*implements IAlteraSeguro*/{
 			this.finalVigencia = data;
 			System.out.println("O seguro foi cancelado!\n");
 		}
-	}
+	}*/
 }
