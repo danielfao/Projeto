@@ -1,15 +1,15 @@
 package backend;
 
-//import java.util.Date;
+import java.util.Date;
 public class Seguro /*implements IAlteraSeguro*/{
-	/*private int id, bonus;
+	private int id, bonus;
 	private Pessoa pessoaSeguro;
 	private Veiculo veiculoSeguro;
-	private Date inicioVigencia, finalVigencia;
+	private String inicioVigencia, finalVigencia;
 	private boolean sinistro=false;
 	private boolean ativo=true;
 	
-	public Seguro(int id, Pessoa pessoa, Veiculo veiculo, int bonus, Date inicio, Date fim){
+	public Seguro(int id, Pessoa pessoa, Veiculo veiculo, int bonus, String inicio, String fim){
 		this.id = id;
 		this.pessoaSeguro = pessoa;
 		this.veiculoSeguro = veiculo;
@@ -53,18 +53,18 @@ public class Seguro /*implements IAlteraSeguro*/{
 	}
 	
 	
-	public Date getInicioVigencia() {
+	public String getInicioVigencia() {
 		return inicioVigencia;
 	}
-	public void setInicioVigencia(Date inicioVigencia) {
+	public void setInicioVigencia(String inicioVigencia) {
 		this.inicioVigencia = inicioVigencia;
 	}
 	
 	
-	public Date getFinalVigencia() {
+	public String getFinalVigencia() {
 		return finalVigencia;
 	}
-	public void setFinalVigencia(Date finalVigencia) {
+	public void setFinalVigencia(String finalVigencia) {
 		this.finalVigencia = finalVigencia;
 	}
 	
@@ -87,11 +87,11 @@ public class Seguro /*implements IAlteraSeguro*/{
 
 	public void cadastrarSinistro(){
 		if (this.sinistro == true){ //Ja tem sinistro nesse seguro
-			System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo + " do cliente " + pessoaSeguro.getNome + " já teve sinistro nessa vigência.\n");
+			System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoaSeguro.getNome() + " já teve sinistro nessa vigência.\n");
 		}
 		else{ //Se o seguro ainda não teve sinistro, muda o status da varíavel
 			this.sinistro = true;
-			System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo + " do cliente " + pessoaSeguro.getNome + "\n");
+			System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoaSeguro.getNome() + "\n");
 		}
 	}
 	
@@ -99,7 +99,7 @@ public class Seguro /*implements IAlteraSeguro*/{
 		
 	}
 	
-	public void cancelarSeguro (Date data){ //Além do seguro, passar também a data do cancelamento
+	public void cancelarSeguro (String data){ //Além do seguro, passar também a data do cancelamento
 		if (this.ativo == false){ 
 			System.out.println("O seguro já encontra-se cancelado!\n");
 		}
@@ -108,5 +108,5 @@ public class Seguro /*implements IAlteraSeguro*/{
 			this.finalVigencia = data;
 			System.out.println("O seguro foi cancelado!\n");
 		}
-	}*/
+	}
 }

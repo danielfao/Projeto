@@ -5,14 +5,13 @@ import java.util.Date;
 public class Pessoa {
 	private String nome;
 	private String cpf;
-	private Date dataNascimento;
+	private String dataNascimento;
 	private String endereco;
 	private int telefone;
 	
 	public Pessoa (){}
 	
-	public Pessoa(String nome, String cpf, Date dataNascimento, String endereco, int telefone) {
-		super();
+	public Pessoa(String nome, String cpf, String dataNascimento, String endereco, int telefone) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
@@ -36,11 +35,11 @@ public class Pessoa {
 		this.cpf = cpf;
 	}
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

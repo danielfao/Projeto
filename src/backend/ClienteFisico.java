@@ -6,11 +6,7 @@ public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
 	
-	public ClienteFisico() {
-		super();
-	}
-	
-	public ClienteFisico(String nome, String cpf, Date dataNascimento, String endereco, int telefone, String profissao, String estadoCivil) {
+	public ClienteFisico(String nome, String cpf, String dataNascimento, String endereco, int telefone, String profissao, String estadoCivil) {
 		super(nome, cpf, dataNascimento, endereco, telefone);
 		this.profissao = profissao;
 		this.estadoCivil = estadoCivil;
@@ -32,8 +28,7 @@ public class ClienteFisico extends Pessoa {
 		this.estadoCivil = estadoCivil;
 	}
 	
-	public void cadastrarClienteFisico (Pessoa nome, Pessoa cpf, Pessoa dataNascimento, Pessoa telefone, String profissao, String estadoCivil){
-		ClienteFisico cliente = new ClienteFisico();
+	public void cadastrarClienteFisico (){
 		//relembrar como cadastrar
 	}
 }

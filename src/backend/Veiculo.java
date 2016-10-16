@@ -2,21 +2,17 @@ package backend;
 
 import java.util.Date;
 
-public class Veiculo extends ClienteFisico{
+public class Veiculo {
+	private int idVeiculo;
 	private String modelo;
 	private String chassi;
 	private String placa;
 	private Date anoFabricacao;
 	private Date anoModelo;
 	private String renavam;
+	private Pessoa cliente;
 	
-	public Veiculo() {
-		super();
-	}
-	
-	public Veiculo(String nome, String cpf, Date dataNascimento, String endereco, int telefone, String profissao,
-			String estadoCivil, String modelo, String chassi, String placa, Date anoFabricacao, Date anoModelo, String renavam) {
-		super(nome, cpf, dataNascimento, endereco, telefone, profissao, estadoCivil);
+	public Veiculo(String modelo, String chassi, String placa, Date anoFabricacao, Date anoModelo, String renavam) {
 		this.modelo = modelo;
 		this.chassi = chassi;
 		this.placa = placa;
@@ -24,7 +20,11 @@ public class Veiculo extends ClienteFisico{
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
 	}
-
+	
+	public int getIdVeiculo(){
+		return idVeiculo;
+	}
+	
 	public String getModelo() {
 		return modelo;
 	}
@@ -73,8 +73,6 @@ public class Veiculo extends ClienteFisico{
 		this.renavam = renavam;
 	}
 	
-	public void cadastrarVeiculo (ClienteFisico nome, ClienteFisico cpf, String chassi, String placa, Date anoFabricacao, Date anoModelo, String renavam){
-		Veiculo veiculo = new Veiculo();
-		//relembrar como cadastrar
+	public void cadastrarVeiculo (){
 	}
 }

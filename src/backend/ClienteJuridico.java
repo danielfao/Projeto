@@ -6,12 +6,7 @@ public class ClienteJuridico {
 	private int telefone;
 	private String endereco;
 	
-	public ClienteJuridico() {
-		super();
-	}
-
 	public ClienteJuridico(String razaoSocial, int cnpj, int telefone, String endereco) {
-		super();
 		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;
 		this.telefone = telefone;
@@ -50,7 +45,6 @@ public class ClienteJuridico {
 		this.endereco = endereco;
 	}
 	
-	public void cadastrarClienteJuridico (String razaoSocial, int cnpj, int telefone, String endereco) {
-		ClienteJuridico cliente = new ClienteJuridico();
+	public void cadastrarClienteJuridico () {
 	}
 }
