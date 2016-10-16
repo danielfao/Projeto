@@ -2,11 +2,11 @@ package backend;
 
 public class ClienteJuridico {
 	private String razaoSocial;
-	private int cnpj;
-	private int telefone;
+	private String cnpj;
+	private String telefone;
 	private String endereco;
 	
-	public ClienteJuridico(String razaoSocial, int cnpj, int telefone, String endereco) {
+	public ClienteJuridico(String razaoSocial, String cnpj, String telefone, String endereco) {
 		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;
 		this.telefone = telefone;
@@ -21,19 +21,19 @@ public class ClienteJuridico {
 		this.razaoSocial = razaoSocial;
 	}
 
-	public int getCnpj() {
+	public String getCnpj() {
 		return cnpj;
 	}
 
-	public void setCnpj(int cnpj) {
+	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
@@ -45,6 +45,6 @@ public class ClienteJuridico {
 		this.endereco = endereco;
 	}
 	
-	public void cadastrarClienteJuridico () {
-	}
+	//public void cadastrarClienteJuridico () {
+	//}
 }

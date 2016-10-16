@@ -1,12 +1,10 @@
 package backend;
 
-import java.util.Date;
-
 public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
 	
-	public ClienteFisico(String nome, String cpf, String dataNascimento, String endereco, int telefone, String profissao, String estadoCivil) {
+	public ClienteFisico(String nome, String cpf, String dataNascimento, String endereco, String telefone, String profissao, String estadoCivil) {
 		super(nome, cpf, dataNascimento, endereco, telefone);
 		this.profissao = profissao;
 		this.estadoCivil = estadoCivil;
@@ -28,7 +26,6 @@ public class ClienteFisico extends Pessoa {
 		this.estadoCivil = estadoCivil;
 	}
 	
-	public void cadastrarClienteFisico (){
-		//relembrar como cadastrar
-	}
+	//public void cadastrarClienteFisico (){
+	//}
 }

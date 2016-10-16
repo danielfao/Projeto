@@ -1,17 +1,15 @@
 package backend;
 
-import java.util.Date;
-
-public class Pessoa {
+public abstract class Pessoa {
 	private String nome;
 	private String cpf;
 	private String dataNascimento;
 	private String endereco;
-	private int telefone;
+	private String telefone;
 	
 	public Pessoa (){}
 	
-	public Pessoa(String nome, String cpf, String dataNascimento, String endereco, int telefone) {
+	public Pessoa(String nome, String cpf, String dataNascimento, String endereco, String telefone) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
@@ -51,11 +49,11 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 }

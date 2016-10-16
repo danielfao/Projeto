@@ -1,7 +1,8 @@
 package backend;
 
 public interface IAlteraSeguro {
-	int calculaBonus();
-	void realizaEndorsso(Veiculo veiculo);
-	boolean temSinistro(Seguro seguro);
+	void calculaBonus();
+	void realizaEndosso(Veiculo veiculo);
+	void temSinistro();
+	void cancelarSeguro(String data);
 }

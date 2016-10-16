@@ -1,24 +1,34 @@
 package backend;
 
-import java.util.Date;
-
 public class Veiculo {
 	private int idVeiculo;
 	private String modelo;
 	private String chassi;
 	private String placa;
-	private Date anoFabricacao;
-	private Date anoModelo;
-	private String renavam;
-	private Pessoa cliente;
+	private int anoFabricacao;
+	private int anoModelo;
+	private long renavam;
+	private ClienteFisico clienteFisico;
+	private ClienteJuridico clienteJuridico;
 	
-	public Veiculo(String modelo, String chassi, String placa, Date anoFabricacao, Date anoModelo, String renavam) {
+	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteFisico cliente) {
 		this.modelo = modelo;
 		this.chassi = chassi;
 		this.placa = placa;
 		this.anoFabricacao = anoFabricacao;
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
+		this.clienteFisico = cliente;
+	}
+	
+	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteJuridico cliente) {
+		this.modelo = modelo;
+		this.chassi = chassi;
+		this.placa = placa;
+		this.anoFabricacao = anoFabricacao;
+		this.anoModelo = anoModelo;
+		this.renavam = renavam;
+		this.clienteJuridico = cliente;
 	}
 	
 	public int getIdVeiculo(){
@@ -49,30 +59,55 @@ public class Veiculo {
 		this.placa = placa;
 	}
 
-	public Date getAnoFabricacao() {
+	public int getAnoFabricacao() {
 		return anoFabricacao;
 	}
 
-	public void setAnoFabricacao(Date anoFabricacao) {
+	public void setAnoFabricacao(int anoFabricacao) {
 		this.anoFabricacao = anoFabricacao;
 	}
 
-	public Date getAnoModelo() {
+	public int getAnoModelo() {
 		return anoModelo;
 	}
 
-	public void setAnoModelo(Date anoModelo) {
-		this.anoModelo = anoModelo;
+	public void setAnoModelo(int anoModelo) {
+		if(anoModelo >= anoFabricacao)
+			this.anoModelo = anoModelo;
+		else
+			System.out.println("Ano modelo não pode ser menor que ano de fabricacao");
 	}
 
-	public String getRenavam() {
+	public long getRenavam() {
 		return renavam;
 	}
 
-	public void setRenavam(String renavam) {
+	public void setRenavam(long renavam) {
 		this.renavam = renavam;
 	}
 	
-	public void cadastrarVeiculo (){
+	public ClienteFisico getClienteFisico() {
+		return clienteFisico;
 	}
+
+	public void setClienteFisico(ClienteFisico clienteFisico) {
+		this.clienteFisico = clienteFisico;
+	}
+
+	public ClienteJuridico getClienteJuridico() {
+		return clienteJuridico;
+	}
+
+	public void setClienteJuridico(ClienteJuridico clienteJuridico) {
+		this.clienteJuridico = clienteJuridico;
+	}
+
+	@Override
+	public String toString(){
+		return "Modelo: " + this.modelo + "\nChassi: " + this.chassi + "\nPlaca: " + this.placa + "\nAno de fabricação: " +
+				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam;
+				
+	}
+	//public void cadastrarVeiculo (){
+	//}
 }

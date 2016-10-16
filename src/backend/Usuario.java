@@ -1,13 +1,11 @@
 package backend;
 
-import java.util.Date;
-
 public class Usuario extends Pessoa{
 	private int id;
 	private String login;
 	private String senha;
 	
-	public Usuario(String nome, String cpf, String dataNascimento, String endereco, int telefone, int id, String login, String senha) {
+	public Usuario(String nome, String cpf, String dataNascimento, String endereco, String telefone, int id, String login, String senha) {
 		super(nome, cpf, dataNascimento, endereco, telefone);
 		this.id = id;
 		this.login = login;
