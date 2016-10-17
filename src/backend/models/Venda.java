@@ -1,4 +1,4 @@
-package backend;
+package backend.models;
 
 public class Venda {
 	private int idVenda;
@@ -47,12 +47,12 @@ public class Venda {
 	@Override
 	public String toString(){
 		if(seguro.getPessoa()!= null){
-			return "Usuario: " + usuario.getNome() + "\nSeguro do veículo: " + seguro.getVeiculoSeguro().getModelo() + " do cliente: "
+			return "Usuario: " + usuario.getNome() + "\nSeguro do veï¿½culo: " + seguro.getVeiculoSeguro().getModelo() + " do cliente: "
 					+ seguro.getPessoa().getNome() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
 					(valorLiquido*1.0738) + "\n";
 		}
 		else if (seguro.getEmpresa()!= null){
-			return "Usuario: " + usuario.getNome() + "\nSeguro do veículo: " + seguro.getVeiculoSeguro().getModelo() + " do cliente: "
+			return "Usuario: " + usuario.getNome() + "\nSeguro do veï¿½culo: " + seguro.getVeiculoSeguro().getModelo() + " do cliente: "
 					+ seguro.getEmpresa().getRazaoSocial() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
 					(valorLiquido*1.0738) + "\n";
 		}

@@ -1,7 +1,15 @@
-package backend;
+package backend.main;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import backend.models.ClienteFisico;
+import backend.models.ClienteJuridico;
+import backend.models.Relatorio;
+import backend.models.Seguro;
+import backend.models.Usuario;
+import backend.models.Veiculo;
+import backend.models.Venda;
 
 public class Aplicacao {
 
@@ -11,10 +19,10 @@ public class Aplicacao {
 		Seguro seguro1 = new Seguro(clienteF, veiculo1, 6, "10/10/2015", "10/10/2016");
 		Usuario usuario1 = new Usuario("Maisa Rissi", "234", "10/09/1991", "Rua das Alamedas, 345", "(16)99999-9999", "maisarissi", "123456");
 		System.out.println(veiculo1);
-		System.out.println("O bonus atual do cliente é: " +seguro1.getBonus());
+		System.out.println("O bonus atual do cliente ï¿½: " +seguro1.getBonus());
 		seguro1.temSinistro();
 		seguro1.temSinistro();
-		System.out.println("O bonus atual do cliente é: " + seguro1.getBonus());
+		System.out.println("O bonus atual do cliente ï¿½: " + seguro1.getBonus());
 		List<Venda> vendas = new ArrayList<Venda>();
 		Venda venda = new Venda (usuario1, seguro1, 1234.50);
 		System.out.println(venda);

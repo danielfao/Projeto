@@ -1,4 +1,4 @@
-package backend;
+package backend.models;
 
 public class Usuario extends Pessoa{
 	private int id;

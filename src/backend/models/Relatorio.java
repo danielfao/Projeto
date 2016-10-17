@@ -1,4 +1,4 @@
-package backend;
+package backend.models;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Relatorio {
 				}
 			}
 			else
-				System.out.println("Esse usuario não tem vendas.\n");
+				System.out.println("Esse usuario nï¿½o tem vendas.\n");
 		}
 	}
 }

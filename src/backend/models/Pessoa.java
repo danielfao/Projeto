@@ -1,4 +1,4 @@
-package backend;
+package backend.models;
 
 public abstract class Pessoa {
 	private String nome;

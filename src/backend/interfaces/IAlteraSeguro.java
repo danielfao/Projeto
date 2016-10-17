@@ -1,4 +1,6 @@
-package backend;
+package backend.interfaces;
+
+import backend.models.Veiculo;
 
 public interface IAlteraSeguro {
 	void calculaBonus();

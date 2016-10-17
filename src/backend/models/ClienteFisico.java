@@ -1,4 +1,4 @@
-package backend;
+package backend.models;
 
 public class ClienteFisico extends Pessoa {
 	private String profissao;

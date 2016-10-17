@@ -1,4 +1,4 @@
-package backend;
+package backend.models;
 
 public class ClienteJuridico {
 	private String razaoSocial;
