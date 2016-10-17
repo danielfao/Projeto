@@ -1,5 +1,8 @@
 package backend;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aplicacao {
 
 	public static void main(String[] args) {
@@ -12,14 +15,19 @@ public class Aplicacao {
 		seguro1.temSinistro();
 		seguro1.temSinistro();
 		System.out.println("O bonus atual do cliente é: " + seguro1.getBonus());
-		Venda venda1 = new Venda (usuario1, seguro1, 1234.50);
-		System.out.println(venda1);
+		List<Venda> vendas = new ArrayList<Venda>();
+		Venda venda = new Venda (usuario1, seguro1, 1234.50);
+		System.out.println(venda);
+		vendas.add(venda);
 		ClienteJuridico clienteJ = new ClienteJuridico("Pizzaria Ze Rissi", "12.345.234/0001-21", "(19)3583-2539", "Papa Joao XXIII, 463");
 		Veiculo veiculo2 = new Veiculo("Corsa Hatch 1.6", "9BCHJ12H874637", "EPP-0908", 2009, 2010, 8907865, clienteJ);
 		Seguro seguro2 = new Seguro(clienteF, veiculo2, 3, "10/05/2016", "10/05/2017");
 		System.out.println(veiculo2);
 		Venda venda2 = new Venda(usuario1, seguro2, 2300.5);
+		vendas.add(venda2);
 		System.out.println(venda2);
+		Relatorio relatorio = new Relatorio();
+		relatorio.gerarVendasPorFuncionario(usuario1, vendas);
 	}
 
 }

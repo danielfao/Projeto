@@ -12,6 +12,10 @@ public class Venda {
 		this.valorLiquido = valorLiquido;
 	}
 	
+	public Venda() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getIdVenda() {
 		return idVenda;
 	}
