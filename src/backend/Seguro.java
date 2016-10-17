@@ -2,15 +2,23 @@ package backend;
 
 public class Seguro implements IAlteraSeguro{
 	private int id, bonus;
-	private Pessoa pessoaSeguro;
+	private ClienteFisico pessoa;
+	private ClienteJuridico empresa;
 	private Veiculo veiculoSeguro;
 	private String inicioVigencia, finalVigencia;
 	private boolean sinistro=false;
 	private boolean ativo=true;
 	
-	public Seguro(int id, Pessoa pessoa, Veiculo veiculo, int bonus, String inicio, String fim){
-		this.id = id;
-		this.pessoaSeguro = pessoa;
+	public Seguro(ClienteFisico pessoa, Veiculo veiculo, int bonus, String inicio, String fim){
+		this.pessoa = pessoa;
+		this.veiculoSeguro = veiculo;
+		this.bonus = bonus;
+		this.inicioVigencia = inicio;
+		this.finalVigencia = fim;
+	}
+	
+	public Seguro(ClienteJuridico empresa, Veiculo veiculo, int bonus, String inicio, String fim){
+		this.empresa = empresa;
 		this.veiculoSeguro = veiculo;
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
@@ -36,11 +44,19 @@ public class Seguro implements IAlteraSeguro{
 	}
 	
 	
-	public Pessoa getPessoaSeguro() {
-		return pessoaSeguro;
+	public ClienteFisico getPessoa() {
+		return pessoa;
 	}
-	public void setPessoaSeguro(Pessoa pessoaSeguro) {
-		this.pessoaSeguro = pessoaSeguro;
+	public void setPessoa(ClienteFisico pessoa) {
+		this.pessoa = pessoa;
+	}
+	
+	
+	public ClienteJuridico getEmpresa() {
+		return empresa;
+	}
+	public void setEmpresa(ClienteJuridico empresa) {
+		this.empresa = empresa;
 	}
 	
 	
@@ -91,13 +107,29 @@ public class Seguro implements IAlteraSeguro{
 	
 	@Override
 	public void temSinistro(){
-		if (this.sinistro == true){ //Ja tem sinistro nesse seguro
-			System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoaSeguro.getNome() + " já teve sinistro nessa vigência.\n");
+		if(pessoa != null){
+			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
+				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
+						" já teve sinistro nessa vigência.\n");
+			}
+			else{ //Se o seguro ainda não teve sinistro, muda o status da varíavel
+				this.sinistro = true;
+				calculaBonus();
+				System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
+						pessoa.getNome() + "\n");
+			}
 		}
-		else{ //Se o seguro ainda não teve sinistro, muda o status da varíavel
-			this.sinistro = true;
-			calculaBonus();
-			System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoaSeguro.getNome() + "\n");
+		else if(empresa != null){
+			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
+				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
+						" já teve sinistro nessa vigência.\n");
+			}
+			else{ //Se o seguro ainda não teve sinistro, muda o status da varíavel
+				this.sinistro = true;
+				calculaBonus();
+				System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
+						empresa.getRazaoSocial() + "\n");
+			}
 		}
 	}
 		
@@ -128,6 +160,4 @@ public class Seguro implements IAlteraSeguro{
 		this.veiculoSeguro = veiculo;
 	}
 	
-	//public void cadastrarSeguro (Pessoa pessoa, Veiculo veiculo){	
-	//}
 }

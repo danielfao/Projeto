@@ -105,7 +105,7 @@ public class Veiculo {
 	@Override
 	public String toString(){
 		return "Modelo: " + this.modelo + "\nChassi: " + this.chassi + "\nPlaca: " + this.placa + "\nAno de fabricação: " +
-				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam;
+				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam + "\n";
 				
 	}
 	//public void cadastrarVeiculo (){
