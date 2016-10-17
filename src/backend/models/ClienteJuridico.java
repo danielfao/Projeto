@@ -6,6 +6,10 @@ public class ClienteJuridico {
 	private String telefone;
 	private String endereco;
 	
+	public ClienteJuridico(){
+		
+	}
+	
 	public ClienteJuridico(String razaoSocial, String cnpj, String telefone, String endereco) {
 		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;

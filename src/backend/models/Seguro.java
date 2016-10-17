@@ -11,6 +11,10 @@ public class Seguro implements IAlteraSeguro{
 	private boolean sinistro=false;
 	private boolean ativo=true;
 	
+	public Seguro(){
+		
+	}
+	
 	public Seguro(ClienteFisico pessoa, Veiculo veiculo, int bonus, String inicio, String fim){
 		this.pessoa = pessoa;
 		this.veiculoSeguro = veiculo;
@@ -87,7 +91,7 @@ public class Seguro implements IAlteraSeguro{
 				this.finalVigencia = finalVigencia;
 			}
 			else 
-				System.out.println("Final de vigencia não pode ser menor que o inicial.\n");
+				System.out.println("Final de vigência não pode ser menor que o inicial.\n");
 		}
 	}
 	
@@ -111,25 +115,25 @@ public class Seguro implements IAlteraSeguro{
 	public void temSinistro(){
 		if(pessoa != null){
 			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
-				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
+				System.out.println("O seguro do veículo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
 						" já teve sinistro nessa vigência.\n");
 			}
 			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
 				this.sinistro = true;
 				calculaBonus();
-				System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
+				System.out.println("Foi cadastrado o sinistro no seguro do veículo " + veiculoSeguro.getModelo() + " do cliente " + 
 						pessoa.getNome() + "\n");
 			}
 		}
 		else if(empresa != null){
 			if (this.sinistro == true){ //Já tem sinistro nesse seguro
 				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
-						" j� teve sinistro nessa vigência.\n");
+						" já teve sinistro nessa vigência.\n");
 			}
 			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
 				this.sinistro = true;
 				calculaBonus();
-				System.out.println("Foi cadastro o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
+				System.out.println("Foi cadastrado o sinistro no seguro do veículo " + veiculoSeguro.getModelo() + " do cliente " + 
 						empresa.getRazaoSocial() + "\n");
 			}
 		}

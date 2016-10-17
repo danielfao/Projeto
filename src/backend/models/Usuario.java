@@ -5,6 +5,10 @@ public class Usuario extends Pessoa{
 	private String login;
 	private String senha;
 	
+	public Usuario() {
+		
+	}
+	
 	public Usuario(String nome, String cpf, String dataNascimento, String endereco, String telefone, String login, String senha) {
 		super(nome, cpf, dataNascimento, endereco, telefone);
 		this.login = login;

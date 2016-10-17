@@ -11,6 +11,10 @@ public class Veiculo {
 	private ClienteFisico clienteFisico;
 	private ClienteJuridico clienteJuridico;
 	
+	public Veiculo(){
+		
+	}
+	
 	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteFisico cliente) {
 		this.modelo = modelo;
 		this.chassi = chassi;

@@ -4,6 +4,10 @@ public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
 	
+	public ClienteFisico(){
+		//Construtor vazio
+	}
+	
 	public ClienteFisico(String nome, String cpf, String dataNascimento, String endereco, String telefone, String profissao, String estadoCivil) {
 		super(nome, cpf, dataNascimento, endereco, telefone);
 		this.profissao = profissao;
