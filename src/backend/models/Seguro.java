@@ -126,11 +126,11 @@ public class Seguro implements IAlteraSeguro{
 			}
 		}
 		else if(empresa != null){
-			if (this.sinistro == true){ //Já tem sinistro nesse seguro
+			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
 				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
 						" ja teve sinistro nessa vigencia.\n");
 			}
-			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
+			else{ //Se o seguro ainda nao teve sinistro, muda o status da variavel
 				this.sinistro = true;
 				calculaBonus();
 				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
@@ -140,11 +140,11 @@ public class Seguro implements IAlteraSeguro{
 	}
 		
 	@Override
-	public void cancelarSeguro (String data){ //Além do seguro, passar também a data do cancelamento
+	public void cancelarSeguro (String data){ //Date de cancelamento
 		if (this.ativo == false){ 
 			System.out.println("O seguro ja encontra-se cancelado!\n");
 		}
-		else{ //Se o seguro estava ativo e foi cancelado, muda o status da variável e o fim da vigencia
+		else{ //Se o seguro estava ativo e foi cancelado, muda o status da variavel e o fim da vigencia
 			this.ativo = false;
 			this.finalVigencia = data;
 			System.out.println("O seguro foi cancelado!\n");
@@ -156,7 +156,7 @@ public class Seguro implements IAlteraSeguro{
 		if(this.sinistro == true){ //Se o seguro teve sinistro, bonus diminui em 1
 			this.bonus = this.bonus - 1;
 		}
-		else{ // Se não teve, bonus aumenta 1
+		else{ // Se nao teve, bonus aumenta 1
 			this.bonus = this.bonus + 1;
 		}
 	}
