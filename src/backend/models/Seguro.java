@@ -91,7 +91,7 @@ public class Seguro implements IAlteraSeguro{
 				this.finalVigencia = finalVigencia;
 			}
 			else 
-				System.out.println("Final de vigência não pode ser menor que o inicial.\n");
+				System.out.println("Final de vigencia nao pode ser menor que o inicial.\n");
 		}
 	}
 	
@@ -115,25 +115,25 @@ public class Seguro implements IAlteraSeguro{
 	public void temSinistro(){
 		if(pessoa != null){
 			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
-				System.out.println("O seguro do veículo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
-						" já teve sinistro nessa vigência.\n");
+				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
+						" ja teve sinistro nessa vigencia.\n");
 			}
 			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
 				this.sinistro = true;
 				calculaBonus();
-				System.out.println("Foi cadastrado o sinistro no seguro do veículo " + veiculoSeguro.getModelo() + " do cliente " + 
+				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
 						pessoa.getNome() + "\n");
 			}
 		}
 		else if(empresa != null){
 			if (this.sinistro == true){ //Já tem sinistro nesse seguro
 				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
-						" já teve sinistro nessa vigência.\n");
+						" ja teve sinistro nessa vigencia.\n");
 			}
 			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
 				this.sinistro = true;
 				calculaBonus();
-				System.out.println("Foi cadastrado o sinistro no seguro do veículo " + veiculoSeguro.getModelo() + " do cliente " + 
+				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
 						empresa.getRazaoSocial() + "\n");
 			}
 		}
@@ -142,7 +142,7 @@ public class Seguro implements IAlteraSeguro{
 	@Override
 	public void cancelarSeguro (String data){ //Além do seguro, passar também a data do cancelamento
 		if (this.ativo == false){ 
-			System.out.println("O seguro já encontra-se cancelado!\n");
+			System.out.println("O seguro ja encontra-se cancelado!\n");
 		}
 		else{ //Se o seguro estava ativo e foi cancelado, muda o status da variável e o fim da vigencia
 			this.ativo = false;

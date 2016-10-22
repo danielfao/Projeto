@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Relatorio {
 	public void gerarVendasPorFuncionario(Usuario usuario, List<Venda> vendas){
-		System.out.println("=========================================\nVendas do funcionário: " + usuario.getNome() +
+		System.out.println("=========================================\nVendas do funcionario: " + usuario.getNome() +
 				"\n=========================================\n\n");
 		for (int i=0; i< vendas.size(); i++){
 			if(usuario.getCpf().equals(vendas.get(i).getUsuario().getCpf())){
@@ -16,7 +16,7 @@ public class Relatorio {
 				}
 			}
 			else
-				System.out.println("Esse usuário não tem vendas.\n");
+				System.out.println("Esse usuario nao tem vendas.\n");
 		}
 	}
 }

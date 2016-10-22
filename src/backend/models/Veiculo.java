@@ -79,7 +79,7 @@ public class Veiculo {
 		if(anoModelo >= anoFabricacao)
 			this.anoModelo = anoModelo;
 		else
-			System.out.println("Ano modelo n�o pode ser menor que ano de fabricacao");
+			System.out.println("Ano modelo nao pode ser menor que ano de fabricacao");
 	}
 
 	public long getRenavam() {
@@ -108,7 +108,7 @@ public class Veiculo {
 
 	@Override
 	public String toString(){
-		return "Modelo: " + this.modelo + "\nChassi: " + this.chassi + "\nPlaca: " + this.placa + "\nAno de fabrica��o: " +
+		return "Modelo: " + this.modelo + "\nChassi: " + this.chassi + "\nPlaca: " + this.placa + "\nAno de fabricacao: " +
 				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam + "\n";
 				
 	}
