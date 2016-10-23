@@ -10,6 +10,7 @@ public class Venda {
 		this.usuario = usuario;
 		this.seguro = seguro;
 		this.valorLiquido = valorLiquido;
+		cadastrarVenda();
 	}
 
 	public int getIdVenda() {
@@ -43,15 +44,18 @@ public class Venda {
 	@Override
 	public String toString(){
 		if(seguro.getPessoa()!= null){
-			return "Usuario: " + usuario.getNome() + "\nSeguro do ve�culo: " + seguro.getVeiculoSeguro().getModelo() + " do cliente: "
+			return "Usuario: " + usuario.getNome() + "\nSeguro do veiculo " + seguro.getVeiculoSeguro().getModelo() + " do cliente "
 					+ seguro.getPessoa().getNome() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
 					(valorLiquido*1.0738) + "\n";
 		}
-		else if (seguro.getEmpresa()!= null){
-			return "Usuario: " + usuario.getNome() + "\nSeguro do ve�culo: " + seguro.getVeiculoSeguro().getModelo() + " do cliente: "
+		else {
+			return "Usuario: " + usuario.getNome() + "\nSeguro do veiculo " + seguro.getVeiculoSeguro().getModelo() + " do cliente "
 					+ seguro.getEmpresa().getRazaoSocial() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
 					(valorLiquido*1.0738) + "\n";
 		}
-		return "";
+	}
+	
+	public void cadastrarVenda(){
+		System.out.println("Venda cadastrada com sucesso!\n");
 	}
 }

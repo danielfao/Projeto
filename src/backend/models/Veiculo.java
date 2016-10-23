@@ -11,10 +11,6 @@ public class Veiculo {
 	private ClienteFisico clienteFisico;
 	private ClienteJuridico clienteJuridico;
 	
-	public Veiculo(){
-		
-	}
-	
 	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteFisico cliente) {
 		this.modelo = modelo;
 		this.chassi = chassi;
@@ -23,6 +19,7 @@ public class Veiculo {
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
 		this.clienteFisico = cliente;
+		cadastrarVeiculo();
 	}
 	
 	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteJuridico cliente) {
@@ -33,6 +30,7 @@ public class Veiculo {
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
 		this.clienteJuridico = cliente;
+		cadastrarVeiculo();
 	}
 	
 	public int getIdVeiculo(){
@@ -112,6 +110,8 @@ public class Veiculo {
 				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam + "\n";
 				
 	}
-	//public void cadastrarVeiculo (){
-	//}
+	
+	public void cadastrarVeiculo (){
+		System.out.println("Veiculo cadastrado com sucesso!\n");
+	}
 }

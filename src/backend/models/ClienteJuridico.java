@@ -22,6 +22,7 @@ public class ClienteJuridico {
 		this.cep = cep;
 		this.cidade = cidade;
 		this.estado = estado;		
+		cadastrarClienteJuridico();
 	}
 	
 	public ClienteJuridico(String razaoSocial, String cnpj, String telefone, String rua, int numero, String complemento, String bairro, String cep, String cidade, String estado) {
@@ -34,7 +35,8 @@ public class ClienteJuridico {
 		this.bairro = bairro;
 		this.cep = cep;
 		this.cidade = cidade;
-		this.estado = estado;		
+		this.estado = estado;	
+		cadastrarClienteJuridico();
 	}
 
 	public String getRazaoSocial() {
@@ -121,16 +123,17 @@ public class ClienteJuridico {
 	public String toString(){
 		String compl = getComplemento();
 		if (compl == null){
-			return "Nome: " + getRazaoSocial() + "\nCNPJ: " + getCnpj() + "\nTelefone: " + getTelefone() + "\n-Endereco: " + 
+			return "Nome: " + getRazaoSocial() + "\nCNPJ: " + getCnpj() + "\nTelefone: " + getTelefone() + "\nEndereco: " + 
 				getRua() + ", " + getNumero() + "\nBairro: " + getBairro() + "\nCEP: " + getCep() + "\nCidade: " + getCidade() + 
-				"\nEstado: " + getEstado();
+				"\nEstado: " + getEstado() + "\n";
 		}
 		
-		return "Nome: " + getRazaoSocial() + "\nCNPJ: " + getCnpj() + "\nTelefone: " + getTelefone() + "\n-Endereco: " + 
+		return "Nome: " + getRazaoSocial() + "\nCNPJ: " + getCnpj() + "\nTelefone: " + getTelefone() + "\nEndereco: " + 
 		getRua() + ", " + getNumero() + "\nComplemento: " + getComplemento() + "\nBairro: " + getBairro() + "\nCEP: " + getCep() + 
-		"\nCidade: " + getCidade() + "\nEstado: " + getEstado();	
+		"\nCidade: " + getCidade() + "\nEstado: " + getEstado() + "\n";	
 	}
 	
-	//public void cadastrarClienteJuridico () {
-	//}
+	public void cadastrarClienteJuridico () {
+		System.out.println("Empresa cadastrada com sucesso!\n");
+	}
 }

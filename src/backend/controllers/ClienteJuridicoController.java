@@ -4,6 +4,6 @@ import backend.models.ClienteJuridico;
 
 public class ClienteJuridicoController {
 	public void create (){
-		ClienteJuridico clienteJuridico = new ClienteJuridico();
+		//ClienteJuridico clienteJuridico = new ClienteJuridico();
 	}
 }

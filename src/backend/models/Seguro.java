@@ -11,16 +11,13 @@ public class Seguro implements IAlteraSeguro{
 	private boolean sinistro=false;
 	private boolean ativo=true;
 	
-	public Seguro(){
-		
-	}
-	
 	public Seguro(ClienteFisico pessoa, Veiculo veiculo, int bonus, String inicio, String fim){
 		this.pessoa = pessoa;
 		this.veiculoSeguro = veiculo;
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
 		this.finalVigencia = fim;
+		cadastrarSeguro();
 	}
 	
 	public Seguro(ClienteJuridico empresa, Veiculo veiculo, int bonus, String inicio, String fim){
@@ -29,6 +26,7 @@ public class Seguro implements IAlteraSeguro{
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
 		this.finalVigencia = fim;
+		cadastrarSeguro();
 	}
 	
 	
@@ -116,25 +114,26 @@ public class Seguro implements IAlteraSeguro{
 		if(pessoa != null){
 			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
 				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
-						" ja teve sinistro nessa vigencia.\n");
+						" ja teve sinistro nessa vigencia.\nO bonus atual e: " + this.bonus + "\n");
 			}
 			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
 				this.sinistro = true;
 				calculaBonus();
 				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
-						pessoa.getNome() + "\n");
+						pessoa.getNome() + "\nO bonus anterior era " + (this.bonus+1) + " e atualmente desceu para: " + this.bonus + "\n");
 			}
 		}
-		else if(empresa != null){
+		else {
 			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
 				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
-						" ja teve sinistro nessa vigencia.\n");
+						" ja teve sinistro nessa vigencia.\nO bonus atual e: " + this.bonus + "\n");
 			}
 			else{ //Se o seguro ainda nao teve sinistro, muda o status da variavel
 				this.sinistro = true;
 				calculaBonus();
 				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
-						empresa.getRazaoSocial() + "\n");
+						empresa.getRazaoSocial() + "\nO bonus anterior era " + (this.bonus+1) + " e atualmente desceu para: " + this.bonus 
+						+ "\n");
 			}
 		}
 	}
@@ -164,6 +163,22 @@ public class Seguro implements IAlteraSeguro{
 	@Override
 	public void realizaEndosso(Veiculo veiculo){
 		this.veiculoSeguro = veiculo;
+	}
+	
+	@Override
+	public String toString(){
+		if(getPessoa()!= null){
+			return "Cliente: " + pessoa.getNome() + "\nSeguro do veiculo " + veiculoSeguro.getModelo() + " " + 
+				veiculoSeguro.getAnoFabricacao() + "/" + veiculoSeguro.getAnoModelo() + "\n";
+		}
+		else {
+			return "Cliente: " + empresa.getRazaoSocial() + "\nSeguro do veiculo " + veiculoSeguro.getModelo() + " " + 
+					veiculoSeguro.getAnoFabricacao() + "/" + veiculoSeguro.getAnoModelo() + "\n";
+		}
+	}
+	
+	public void cadastrarSeguro(){
+		System.out.println("Seguro cadastrado com sucesso!\n");
 	}
 	
 }
