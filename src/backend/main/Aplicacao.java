@@ -57,6 +57,8 @@ public class Aplicacao {
 		vendas.add(venda);
 		System.out.println(venda);
 		
+		System.out.println(vendas.size());
+		
 		usuarios.add(usuario1);
 		usuarios.add(usuario2);
 		usuarios.add(usuario3);
@@ -71,6 +73,7 @@ public class Aplicacao {
 		relatorio.gerarVendasPorFuncionario(usuario2, vendas);
 		relatorio.gerarVendasPorFuncionario(usuario3, vendas);
 		relatorio.gerarVendasTodosFuncionarios(usuarios, vendas);
+		relatorio.gerarSegurosAtivosPorClienteFisico(clienteF1, vendas);
 	}
 
 }

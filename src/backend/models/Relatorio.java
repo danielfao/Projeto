@@ -44,6 +44,8 @@ public class Relatorio {
 			buffer.write ("\nValor total: R$ " + valorFormat.format(totalFuncionario));
 		}
 		
+		System.out.println("Relatorio de venda do(a) usuario(a) " + usuario.getNome() + " gerado com sucesso!\n");
+		
 		buffer.flush();
 		arquivo.close();
 	}
@@ -84,15 +86,43 @@ public class Relatorio {
 		buffer.write ("\n============== Somatoria das vendas =============");
 		buffer.write ("\nValor total: R$ " + valorFormat.format(todosFuncionarios));
 		
+		System.out.println("Relatorio de vendas totais gerado com sucesso!\n");
+		
 		buffer.flush();
 		arquivo.close();
 	}
 	
-	public void gerarPorClientes() throws IOException{
-		Writer arquivo = new FileWriter("cliente.txt");
+	public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
+		Writer arquivo = new FileWriter("vendas" + cliente.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
+		double totalCliente = 0;
+		boolean temSeguroAtivo = false;
+		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
+		buffer.write("============== Relatorio de Seguros do(a) Cliente: " + cliente.getNome() + " =============\n");
+		for (Venda v : vendas) {
+			if (v.getSeguro().getPessoa() != null){
+				if(cliente.getCpf().equals(v.getSeguro().getPessoa().getCpf())){
+					if(v.getSeguro().isAtivo() == true){
+						double valorTotal = v.getValorLiquido();
+						temSeguroAtivo = true;
+						valorTotal = (valorTotal*1.0738);
+						buffer.write("\nVeiculo: " + v.getSeguro().getVeiculoSeguro().getModelo() + " " + 
+								v.getSeguro().getVeiculoSeguro().getAnoFabricacao() + "/" + 
+								v.getSeguro().getVeiculoSeguro().getAnoModelo() + "\nValor Total: "	+ 
+								valorFormat.format(valorTotal) + "\n");
+						totalCliente = totalCliente + valorTotal;
+					}
+				}
+			}	
+		}
+		
+		if(temSeguroAtivo == false){
+			buffer.write("O(a) cliente " + cliente.getNome() + " nao tem seguros ativos.\n");
+		} 
+
+		System.out.println("Relatorio de seguros do cliente " + cliente.getNome() + " gerado com sucesso!\n");
 		
 		buffer.flush();
 		arquivo.close();
