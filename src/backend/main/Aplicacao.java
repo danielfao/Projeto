@@ -3,7 +3,6 @@ package backend.main;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import backend.models.ClienteFisico;
 import backend.models.ClienteJuridico;
 import backend.models.Relatorio;
@@ -18,7 +17,6 @@ public class Aplicacao {
 		List<Venda> vendas = new ArrayList<Venda>();
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 
-				
 		ClienteFisico clienteF1 = new ClienteFisico("Jose da Silva", "123", "09/10/1990", "(16)3355-5221", "Rua das Orquideas", 123, "Jd Paola", "13690-000", "Descalvado" , "SP", "Funcionario publico", "Casado");
 		//System.out.println(clienteF1);
 		
@@ -57,8 +55,6 @@ public class Aplicacao {
 		vendas.add(venda);
 		System.out.println(venda);
 		
-		System.out.println(vendas.size());
-		
 		usuarios.add(usuario1);
 		usuarios.add(usuario2);
 		usuarios.add(usuario3);
@@ -74,6 +70,7 @@ public class Aplicacao {
 		relatorio.gerarVendasPorFuncionario(usuario3, vendas);
 		relatorio.gerarVendasTodosFuncionarios(usuarios, vendas);
 		relatorio.gerarSegurosAtivosPorClienteFisico(clienteF1, vendas);
+		relatorio.gerarSegurosAtivosPorClienteJuridico(clienteJ1, vendas);
 	}
 
 }

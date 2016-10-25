@@ -127,4 +127,40 @@ public class Relatorio {
 		buffer.flush();
 		arquivo.close();
 	}
+	
+	public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
+		Writer arquivo = new FileWriter("vendas" + cliente.getRazaoSocial().replaceAll(" ", "") + ".txt");
+		BufferedWriter buffer = new BufferedWriter(arquivo);
+		
+		double totalCliente = 0;
+		boolean temSeguroAtivo = false;
+		DecimalFormat valorFormat = new DecimalFormat("#.00");
+		
+		buffer.write("============== Relatorio de Seguros do(a) Cliente: " + cliente.getRazaoSocial() + " =============\n");
+		for (Venda v : vendas) {
+			if (v.getSeguro().getEmpresa() != null){
+				if(cliente.getRazaoSocial().equals(v.getSeguro().getEmpresa().getRazaoSocial())){
+					if(v.getSeguro().isAtivo() == true){
+						double valorTotal = v.getValorLiquido();
+						temSeguroAtivo = true;
+						valorTotal = (valorTotal*1.0738);
+						buffer.write("\nVeiculo: " + v.getSeguro().getVeiculoSeguro().getModelo() + " " + 
+								v.getSeguro().getVeiculoSeguro().getAnoFabricacao() + "/" + 
+								v.getSeguro().getVeiculoSeguro().getAnoModelo() + "\nValor Total: "	+ 
+								valorFormat.format(valorTotal) + "\n");
+						totalCliente = totalCliente + valorTotal;
+					}
+				}
+			}	
+		}
+		
+		if(temSeguroAtivo == false){
+			buffer.write("O(a) cliente " + cliente.getRazaoSocial() + " nao tem seguros ativos.\n");
+		} 
+
+		System.out.println("Relatorio de seguros do cliente " + cliente.getRazaoSocial() + " gerado com sucesso!\n");
+		
+		buffer.flush();
+		arquivo.close();
+	}
 }
