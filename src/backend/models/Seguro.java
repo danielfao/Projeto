@@ -8,24 +8,27 @@ public class Seguro implements IAlteraSeguro{
 	private ClienteJuridico empresa;
 	private Veiculo veiculoSeguro;
 	private String inicioVigencia, finalVigencia;
+	private String companhia;
 	private boolean sinistro=false;
 	private boolean ativo=true;
 	
-	public Seguro(ClienteFisico pessoa, Veiculo veiculo, int bonus, String inicio, String fim){
+	public Seguro(ClienteFisico pessoa, Veiculo veiculo, int bonus, String inicio, String fim, String companhia){
 		this.pessoa = pessoa;
 		this.veiculoSeguro = veiculo;
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
 		this.finalVigencia = fim;
+		this.companhia = companhia;
 		cadastrarSeguro();
 	}
 	
-	public Seguro(ClienteJuridico empresa, Veiculo veiculo, int bonus, String inicio, String fim){
+	public Seguro(ClienteJuridico empresa, Veiculo veiculo, int bonus, String inicio, String fim, String companhia){
 		this.empresa = empresa;
 		this.veiculoSeguro = veiculo;
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
 		this.finalVigencia = fim;
+		this.companhia = companhia;
 		cadastrarSeguro();
 	}
 	
@@ -94,6 +97,14 @@ public class Seguro implements IAlteraSeguro{
 	}
 	
 	
+	public String getCompanhia() {
+		return companhia;
+	}
+
+	public void setCompanhia(String companhia) {
+		this.companhia = companhia;
+	}
+
 	public boolean isSinistro() {
 		return sinistro;
 	}
@@ -110,7 +121,7 @@ public class Seguro implements IAlteraSeguro{
 	}
 	
 	@Override
-	public void temSinistro(){
+	public void terSinistro(){
 		if(pessoa != null){
 			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
 				System.out.println("O seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + pessoa.getNome() + 
@@ -118,7 +129,7 @@ public class Seguro implements IAlteraSeguro{
 			}
 			else{ //Se o seguro ainda não teve sinistro, muda o status da variável
 				this.sinistro = true;
-				calculaBonus();
+				calcularBonus();
 				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
 						pessoa.getNome() + "\nO bonus anterior era " + (this.bonus+1) + " e atualmente desceu para: " + this.bonus + "\n");
 			}
@@ -130,7 +141,7 @@ public class Seguro implements IAlteraSeguro{
 			}
 			else{ //Se o seguro ainda nao teve sinistro, muda o status da variavel
 				this.sinistro = true;
-				calculaBonus();
+				calcularBonus();
 				System.out.println("Foi cadastrado o sinistro no seguro do veiculo " + veiculoSeguro.getModelo() + " do cliente " + 
 						empresa.getRazaoSocial() + "\nO bonus anterior era " + (this.bonus+1) + " e atualmente desceu para: " + this.bonus 
 						+ "\n");
@@ -151,7 +162,7 @@ public class Seguro implements IAlteraSeguro{
 	}
 	
 	@Override
-	public void calculaBonus(){
+	public void calcularBonus(){
 		if(this.sinistro == true){ //Se o seguro teve sinistro, bonus diminui em 1
 			this.bonus = this.bonus - 1;
 		}
@@ -161,7 +172,7 @@ public class Seguro implements IAlteraSeguro{
 	}
 	
 	@Override
-	public void realizaEndosso(Veiculo veiculo){
+	public void realizarEndosso(Veiculo veiculo){
 		this.veiculoSeguro = veiculo;
 	}
 	

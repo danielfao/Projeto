@@ -1,5 +1,7 @@
 package backend.models;
 
+import java.text.DecimalFormat;
+
 public class Venda {
 	private int idVenda;
 	private Usuario usuario;
@@ -43,15 +45,16 @@ public class Venda {
 	
 	@Override
 	public String toString(){
+		DecimalFormat valorTotal = new DecimalFormat("#.00");
 		if(seguro.getPessoa()!= null){
 			return "Usuario: " + usuario.getNome() + "\nSeguro do veiculo " + seguro.getVeiculoSeguro().getModelo() + " do cliente "
 					+ seguro.getPessoa().getNome() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
-					(valorLiquido*1.0738) + "\n";
+					valorTotal.format(valorLiquido*1.0738) + "\n";
 		}
 		else {
 			return "Usuario: " + usuario.getNome() + "\nSeguro do veiculo " + seguro.getVeiculoSeguro().getModelo() + " do cliente "
 					+ seguro.getEmpresa().getRazaoSocial() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
-					(valorLiquido*1.0738) + "\n";
+					valorTotal.format(valorLiquido*1.0738) + "\n";
 		}
 	}
 	

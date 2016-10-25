@@ -55,7 +55,7 @@ public class ClienteFisico extends Pessoa {
 	}
 	
 	public void cadastrarClienteFisico() throws IOException{
-		System.out.println("Cadastro de cliente! Por favor, entre com as informacoes.\nNome: ");
+		/*System.out.println("Cadastro de cliente! Por favor, entre com as informacoes.\nNome: ");
 		this.setNome(ler.nextLine());
 		System.out.println("CPF: ");
 		this.setCpf(ler.nextLine());
@@ -70,11 +70,14 @@ public class ClienteFisico extends Pessoa {
 		System.out.println("Logradouro: ");
 		this.setRua(ler.nextLine());
 		System.out.println("Numero: ");
-		this.setNumero(ler.nextInt());
+		setNumero(ler.nextInt());
+		
+		ler.nextLine();//Esvaziar o buffer
 		
 		System.out.println("Inserir complemento? (s)sim (n)nao : ");
 		char compl;
 		compl = (char)System.in.read();
+		ler.nextLine();//Esvaziar o buffer
 		if(compl == 's'){
 			System.out.println("Complemento: ");
 			this.setComplemento(ler.nextLine());
@@ -87,7 +90,7 @@ public class ClienteFisico extends Pessoa {
 		System.out.println("Cidade: ");
 		this.setCidade(ler.nextLine());
 		System.out.println("Estado: ");
-		this.setEstado(ler.nextLine());
+		this.setEstado(ler.nextLine());*/
 		
 		System.out.println("Cliente cadastrado com sucesso!\n");
 	}
