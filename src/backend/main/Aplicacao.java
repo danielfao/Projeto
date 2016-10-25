@@ -16,6 +16,7 @@ public class Aplicacao {
 	public static void main(String[] args) throws IOException {
 		List<Venda> vendas = new ArrayList<Venda>();
 		List<Usuario> usuarios = new ArrayList<Usuario>();
+		List<Seguro> seguros = new ArrayList<>();
 
 		ClienteFisico clienteF1 = new ClienteFisico("Jose da Silva", "123", "09/10/1990", "(16)3355-5221", "Rua das Orquideas", 123, "Jd Paola", "13690-000", "Descalvado" , "SP", "Funcionario publico", "Casado");
 		//System.out.println(clienteF1);
@@ -32,16 +33,22 @@ public class Aplicacao {
 
 		Seguro seguro1 = new Seguro(clienteF1, veiculo1, 6, "10/10/2015", "10/10/2016", "Porto Seguro");
 		//System.out.println(seguro1);
+		seguros.add(seguro1);
 		Seguro seguro2 = new Seguro(clienteF1, veiculo2, 3, "10/05/2016", "10/05/2017", "Mapfre");
 		//System.out.println(seguro2);
+		seguros.add(seguro2);
 		Seguro seguro3 = new Seguro(clienteJ1, veiculo3, 2, "11/03/2016", "11/03/2017", "Mapfre");
+		seguros.add(seguro3);
 		
 		Usuario usuario1 = new Usuario("Maisa Rissi", "234", "10/09/1991", "(16)99999-9999", "Rua das Alamedas", 345, "Ap-402", "13560-320", "Vila Monteiro", "Sao Carlos", "SP", "maisarissi", "123456");
 		//System.out.println(usuario1);
+		usuarios.add(usuario1);
 		Usuario usuario2 = new Usuario("Sara Pauline", "457", "11/05/1990", "(16)99999-9999", "Rua das Orquideas", 4345, "13580-120", "Vila Nery", "Sao Carlos", "SP", "sarafabricio", "012983");
 		//System.out.println(usuario2);
+		usuarios.add(usuario2);
 		Usuario usuario3 = new Usuario ("Daniel Fernandes", "333.222.444-01", "04/01/1985", "(16)98888-9999", "Rua dos Crisantemos", 454, "13560-060", "Santa Paula", "Sao Carlos", "SP", "danielfao", "12345" );
 		//System.out.println(usuario2);
+		usuarios.add(usuario3);
 		
 		Venda venda = new Venda (usuario1, seguro1, 1234.50);
 		vendas.add(venda);
@@ -55,14 +62,10 @@ public class Aplicacao {
 		vendas.add(venda);
 		System.out.println(venda);
 		
-		usuarios.add(usuario1);
-		usuarios.add(usuario2);
-		usuarios.add(usuario3);
-		
 		seguro1.terSinistro();
 		seguro1.terSinistro();
 		
-		seguro1.cancelarSeguro("01/05/2015");
+		seguro1.cancelarSeguro("01/05/2016");
 		
 		Relatorio relatorio = new Relatorio();
 		relatorio.gerarVendasPorFuncionario(usuario1, vendas);
@@ -71,6 +74,7 @@ public class Aplicacao {
 		relatorio.gerarVendasTodosFuncionarios(usuarios, vendas);
 		relatorio.gerarSegurosAtivosPorClienteFisico(clienteF1, vendas);
 		relatorio.gerarSegurosAtivosPorClienteJuridico(clienteJ1, vendas);
+		relatorio.gerarSegurosInativos(seguros);
 	}
 
 }

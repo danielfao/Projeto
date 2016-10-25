@@ -16,7 +16,7 @@ public class Relatorio {
 		boolean temVenda = false;
 		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
-		buffer.write("==============  Relatorio de vendas do(a) funcionario(a): " + usuario.getNome() +
+		buffer.write("============== Relatorio de vendas do(a) funcionario(a): " + usuario.getNome() +
 				" =============\n");
 		for (int i=0; i< vendas.size(); i++){
 			if(usuario.getCpf().equals(vendas.get(i).getUsuario().getCpf())){
@@ -58,7 +58,7 @@ public class Relatorio {
 		boolean temVenda = false;
 		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
-		buffer.write("==============  Relatorio total de vendas =============\n");
+		buffer.write("============== Relatorio total de vendas =============\n");
 		
 		for (int i=0; i<usuarios.size(); i++) {
 			double valorTotal = 0;
@@ -160,6 +160,39 @@ public class Relatorio {
 
 		System.out.println("Relatorio de seguros do cliente " + cliente.getRazaoSocial() + " gerado com sucesso!\n");
 		
+		buffer.flush();
+		arquivo.close();
+	}
+	
+	public void gerarSegurosInativos (List<Seguro> seguros) throws IOException{
+		Writer arquivo = new FileWriter("segurosInativos.txt");
+		BufferedWriter buffer = new BufferedWriter(arquivo);
+
+		//boolean isInativo = true;
+		
+		buffer.write("============== Relatorio de Seguros Inativos =============\n");
+		for (Seguro s : seguros) {
+			if(s.isAtivo() == false){
+				if (s.getPessoa() != null){
+					buffer.write("\nCliente: " + s.getPessoa().getNome() + "\nVeiculo: " + s.getVeiculoSeguro().getModelo() + " " + 
+						s.getVeiculoSeguro().getAnoFabricacao() + "/" + s.getVeiculoSeguro().getAnoModelo() + "\nVigencia: " + 
+						s.getInicioVigencia() + " ate " + s.getFinalVigencia() + "\n");
+				}
+				else{
+					buffer.write("\nCliente: " + s.getEmpresa().getRazaoSocial() + "\nVeiculo: " + s.getVeiculoSeguro().getModelo() + " " + 
+							s.getVeiculoSeguro().getAnoFabricacao() + "/" + s.getVeiculoSeguro().getAnoModelo() + "\n"+ "\nVigencia: " + 
+							s.getInicioVigencia() + " ate " + s.getFinalVigencia() + "\n");
+				}
+				//isInativo = false;
+			}
+		}
+		
+		/*if (isInativo == false){
+			buffer.write("Nao existem seguros inativos!\n");
+		}*/
+		
+		System.out.println("Relatorio de seguros inativos gerado com sucesso!\n");
+
 		buffer.flush();
 		arquivo.close();
 	}
