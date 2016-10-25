@@ -1,0 +1,13 @@
+============== Relatorio total de vendas ==============
+
+============== Funcionario(a): Maisa Rissi ==============
+Valor total das vendas: R$ 3795.88
+
+============== Funcionario(a): Sara Pauline ==============
+O usuario Sara Pauline nao tem vendas. 
+
+============== Funcionario(a): Daniel Fernandes ==============
+Valor total das vendas: R$ 2201.50
+
+============== Somatoria das vendas ==============
+Valor total: R$ 5997.39

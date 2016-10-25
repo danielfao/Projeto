@@ -1,0 +1,4 @@
+============== Relatorio de vendas do(a) funcionario(a): Daniel Fernandes =============
+
+Seguro do cliente: Pizzaria Ze Rissi
+Valor Total: 2201.50

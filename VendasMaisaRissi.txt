@@ -1,0 +1,7 @@
+============== Relatorio de vendas do(a) funcionario(a): Maisa Rissi =============
+
+Seguro do cliente: Jose da Silva
+Valor Total: 1325.61
+
+Seguro do cliente: Jose da Silva
+Valor Total: 2470.28
