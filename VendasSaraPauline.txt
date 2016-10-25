@@ -1,2 +1,0 @@
-============== Relatorio de vendas do(a) funcionario(a): Sara Pauline =============
-O usuario Sara Pauline nao tem vendas.
