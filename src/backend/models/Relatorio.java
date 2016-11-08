@@ -7,7 +7,19 @@ import java.io.Writer;
 import java.text.DecimalFormat;
 import java.util.List;
 
+/** Class Relatorio related to create reports.
+ * 
+ * @author Daniel Oliveira / Maisa Rissi
+ *
+ */
 public class Relatorio {
+	
+	/** Method responsible for creating sales reports in *.txt files of each employee.
+	 * 
+	 * @param usuario
+	 * @param vendas
+	 * @throws IOException
+	 */
 	public void gerarVendasPorFuncionario(Usuario usuario, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("vendas" + usuario.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter (arquivo);
@@ -50,6 +62,12 @@ public class Relatorio {
 		arquivo.close();
 	}
 	
+	/** Method responsible for creating sales reports in *.txt files of all employees.
+	 * 
+	 * @param usuarios
+	 * @param vendas
+	 * @throws IOException
+	 */
 	public void gerarVendasTodosFuncionarios(List<Usuario> usuarios, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("vendasTotais.txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
@@ -92,6 +110,12 @@ public class Relatorio {
 		arquivo.close();
 	}
 	
+	/** Method responsible for creating insurance reports that are active, in text files of regular clients.
+	 * 
+	 * @param cliente
+	 * @param vendas
+	 * @throws IOException
+	 */
 	public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("vendas" + cliente.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
@@ -128,6 +152,12 @@ public class Relatorio {
 		arquivo.close();
 	}
 	
+	/** Method responsible for creating insurance reports that are active, in text files, by legal customer/client.
+	 * 
+	 * @param cliente
+	 * @param vendas
+	 * @throws IOException
+	 */
 	public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("vendas" + cliente.getRazaoSocial().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
@@ -164,6 +194,11 @@ public class Relatorio {
 		arquivo.close();
 	}
 	
+	/** Method responsible for creating insurance reports that are inactive, in text files.
+	 * 
+	 * @param seguros
+	 * @throws IOException
+	 */
 	public void gerarSegurosInativos (List<Seguro> seguros) throws IOException{
 		Writer arquivo = new FileWriter("segurosInativos.txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
