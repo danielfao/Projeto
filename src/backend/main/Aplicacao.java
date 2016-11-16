@@ -11,6 +11,13 @@ import backend.models.Usuario;
 import backend.models.Veiculo;
 import backend.models.Venda;
 
+/** Main class responsible for call all methods and create the objects
+ * this class will be refactored.
+ * 
+ * @author Daniel Oliveira / Maisa Rissi
+ *
+ * @version 1.0
+ */
 public class Aplicacao {
 
 	public static void main(String[] args) throws IOException {

@@ -3,11 +3,34 @@ package backend.models;
 import java.io.IOException;
 import java.util.Scanner;
 
+/** Class ClienteFisico that extends from Pessoa.
+ *  Contains extra attributes to create a regular client.
+ * 
+ * @author Daniel Oliveira / Maisa Rissi
+ * 
+ */
+
 public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
 	Scanner ler = new Scanner(System.in);
 	
+	/** Constructor method with complemento attribute.
+	 * 
+	 * @param nome
+	 * @param cpf String
+	 * @param dataNascimento
+	 * @param telefone
+	 * @param rua
+	 * @param numero
+	 * @param bairro
+	 * @param cep
+	 * @param cidade
+	 * @param estado
+	 * @param profissao
+	 * @param estadoCivil
+	 * @throws IOException
+	 */
 	public ClienteFisico(String nome, String cpf, String dataNascimento, String telefone, String rua, int numero, String bairro, String cep, String cidade, String estado, String profissao, String estadoCivil) throws IOException {
 		super(nome, cpf, dataNascimento, telefone, rua, numero, bairro, cep, cidade, estado);
 		this.profissao = profissao;
@@ -15,6 +38,23 @@ public class ClienteFisico extends Pessoa {
 		cadastrarClienteFisico();
 	}
 	
+	/** Constructor method without complemento attribute.
+	 * 
+	 * @param nome
+	 * @param cpf
+	 * @param dataNascimento
+	 * @param telefone
+	 * @param rua
+	 * @param numero
+	 * @param complemento
+	 * @param bairro
+	 * @param cep
+	 * @param cidade
+	 * @param estado
+	 * @param profissao
+	 * @param estadoCivil
+	 * @throws IOException
+	 */
 	public ClienteFisico(String nome, String cpf, String dataNascimento, String telefone, String rua, int numero, String complemento, String bairro, String cep, String cidade, String estado, String profissao, String estadoCivil) throws IOException {
 		super(nome, cpf, dataNascimento, telefone, rua, numero, complemento, bairro, cep, cidade, estado);
 		this.profissao = profissao;
@@ -22,22 +62,42 @@ public class ClienteFisico extends Pessoa {
 		cadastrarClienteFisico();
 	}
 
+	/** Getter method related to instance of attribute
+	 * 
+	 * @return profissao
+	 */
 	public String getProfissao() {
 		return profissao;
 	}
 
+	/** Setter method related to instance of the attribute
+	 * 
+	 * @param profissao
+	 */
 	public void setProfissao(String profissao) {
 		this.profissao = profissao;
 	}
 
+	/** Getter method related to instance of the attribute
+	 * 
+	 * @return estadoCivil
+	 */
 	public String getEstadoCivil() {
 		return estadoCivil;
 	}
 
+	/** Setter method related to instance of the attribute
+	 * 
+	 * @param estadoCivil
+	 */
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
 	
+	/** Method that overrides the output of this class depending if it's using the constructor with complemento or without.
+	 * 
+	 * @return String all attributes in a easy way to read using the console/terminal
+	 */
 	@Override
 	public String toString(){
 		String compl = getComplemento();
@@ -54,6 +114,11 @@ public class ClienteFisico extends Pessoa {
 			getCidade() + "\nEstado: " + getEstado() + "\n";		
 	}
 	
+	/** Method that overrides the output of this class depending if it's using the constructor with complemento or without.
+	 * 
+	 * @return String all attributes in a easy way to read using the console/terminal
+	 * @throws IOException
+	 */
 	public void cadastrarClienteFisico() throws IOException{
 		/*System.out.println("Cadastro de cliente! Por favor, entre com as informacoes.\nNome: ");
 		this.setNome(ler.nextLine());
