@@ -16,8 +16,7 @@ public class Relatorio {
 		boolean temVenda = false;
 		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
-		buffer.write("============== Relatorio de vendas do(a) funcionario(a): " + usuario.getNome() +
-				" =============\n");
+		buffer.write("============== Relatorio de vendas =============\nFuncionario(a): " + usuario.getNome() + "\n");
 		for (int i=0; i< vendas.size(); i++){
 			if(usuario.getCpf().equals(vendas.get(i).getUsuario().getCpf())){
 				double valorTotal = vendas.get(i).getValorLiquido();
@@ -38,7 +37,7 @@ public class Relatorio {
 		}
 		
 		if(temVenda == false){
-			buffer.write("O usuario " + usuario.getNome() + " nao tem vendas.\n");
+			buffer.write("\nEsse funcionario nao possui vendas.\n");
 		} else {
 			buffer.write ("\n============== Somatoria das vendas =============");
 			buffer.write ("\nValor total: R$ " + valorFormat.format(totalFuncionario));
@@ -58,13 +57,13 @@ public class Relatorio {
 		boolean temVenda = false;
 		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
-		buffer.write("============== Relatorio total de vendas =============\n");
+		buffer.write("============== Relatorio total de vendas =============");
 		
 		for (int i=0; i<usuarios.size(); i++) {
 			double valorTotal = 0;
 			temVenda = false;
 			
-			buffer.write("\n============== Funcionario(a): " + usuarios.get(i).getNome() + " =============\n");
+			buffer.write("\n\nFuncionario(a): " + usuarios.get(i).getNome() + "\n");
 			
 			for (int j=0; j<vendas.size(); j++) {
 				if (usuarios.get(i).getCpf().equals(vendas.get(j).getUsuario().getCpf())){
@@ -78,12 +77,12 @@ public class Relatorio {
 			todosFuncionarios += valorTotal;
 			
 			if(temVenda == false){
-				buffer.write("O usuario " + usuarios.get(i).getNome() + " nao tem vendas. \n");
+				buffer.write("Esse funcionario nao possui vendas.\n");
 			} else {
 				buffer.write("Valor total das vendas: R$ " + valorFormat.format(valorTotal) + "\n");
 			}
 		}
-		buffer.write ("\n============== Somatoria das vendas =============");
+		buffer.write ("\n========= Somatoria das vendas de todos os funcionarios ========");
 		buffer.write ("\nValor total: R$ " + valorFormat.format(todosFuncionarios));
 		
 		System.out.println("Relatorio de vendas totais gerado com sucesso!\n");
@@ -93,14 +92,14 @@ public class Relatorio {
 	}
 	
 	public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
-		Writer arquivo = new FileWriter("vendas" + cliente.getNome().replaceAll(" ", "") + ".txt");
+		Writer arquivo = new FileWriter("seguros" + cliente.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
 		double totalCliente = 0;
 		boolean temSeguroAtivo = false;
 		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
-		buffer.write("============== Relatorio de Seguros do(a) Cliente: " + cliente.getNome() + " =============\n");
+		buffer.write("============== Relatorio de Seguros =============\nCliente: " + cliente.getNome() + "\n");
 		for (Venda v : vendas) {
 			if (v.getSeguro().getPessoa() != null){
 				if(cliente.getCpf().equals(v.getSeguro().getPessoa().getCpf())){
@@ -119,7 +118,7 @@ public class Relatorio {
 		}
 		
 		if(temSeguroAtivo == false){
-			buffer.write("O(a) cliente " + cliente.getNome() + " nao tem seguros ativos.\n");
+			buffer.write("\nO(a) cliente " + cliente.getNome() + " nao tem seguros ativos.\n");
 		} 
 
 		System.out.println("Relatorio de seguros do cliente " + cliente.getNome() + " gerado com sucesso!\n");
@@ -129,14 +128,14 @@ public class Relatorio {
 	}
 	
 	public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
-		Writer arquivo = new FileWriter("vendas" + cliente.getRazaoSocial().replaceAll(" ", "") + ".txt");
+		Writer arquivo = new FileWriter("seguros" + cliente.getRazaoSocial().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
 		double totalCliente = 0;
 		boolean temSeguroAtivo = false;
 		DecimalFormat valorFormat = new DecimalFormat("#.00");
 		
-		buffer.write("============== Relatorio de Seguros do(a) Cliente: " + cliente.getRazaoSocial() + " =============\n");
+		buffer.write("============== Relatorio de Seguros =============\nCliente: " + cliente.getRazaoSocial() + "\n");
 		for (Venda v : vendas) {
 			if (v.getSeguro().getEmpresa() != null){
 				if(cliente.getRazaoSocial().equals(v.getSeguro().getEmpresa().getRazaoSocial())){
@@ -155,7 +154,7 @@ public class Relatorio {
 		}
 		
 		if(temSeguroAtivo == false){
-			buffer.write("O(a) cliente " + cliente.getRazaoSocial() + " nao tem seguros ativos.\n");
+			buffer.write("\nO(a) cliente " + cliente.getRazaoSocial() + " nao tem seguros ativos.\n");
 		} 
 
 		System.out.println("Relatorio de seguros do cliente " + cliente.getRazaoSocial() + " gerado com sucesso!\n");
