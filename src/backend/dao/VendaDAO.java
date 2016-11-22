@@ -1,4 +1,4 @@
-package dao;
+package backend.dao;
 
 public class VendaDAO {
 
