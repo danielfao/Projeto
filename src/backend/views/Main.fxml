@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -12,48 +15,184 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Cadastrar">
+          <Tab fx:id="tabCadastrar" text="Cadastrar">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="491.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="649.0">
                      <children>
-                        <Accordion>
+                        <Accordion prefHeight="652.0" prefWidth="649.0">
                           <panes>
-                            <TitledPane animated="false" text="Funcionário">
+                            <TitledPane animated="false" prefHeight="300.0" prefWidth="600.0" text="Funcionário">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="598.0">
                                        <children>
-                                          <Label layoutX="14.0" layoutY="14.0" text="Nome" />
-                                          <TextField layoutX="69.0" layoutY="9.0" prefHeight="27.0" prefWidth="515.0" />
-                                          <Label layoutX="14.0" layoutY="48.0" text="CPF" />
-                                          <TextField layoutX="69.0" layoutY="43.0" prefHeight="27.0" prefWidth="173.0" />
-                                          <Label layoutX="257.0" layoutY="48.0" text="Data de nascimento" />
-                                          <DatePicker layoutX="390.0" layoutY="43.0" />
+                                          <Label fx:id="lbNomeFuncionario" layoutX="14.0" layoutY="14.0" text="Nome" />
+                                          <TextField fx:id="tfNomeFuncionario" layoutX="73.0" layoutY="9.0" prefHeight="27.0" prefWidth="565.0" />
+                                          <Label fx:id="lbCpfFuncionario" layoutX="14.0" layoutY="50.0" text="CPF" />
+                                          <TextField fx:id="tfCpfFuncionario" layoutX="74.0" layoutY="45.0" prefHeight="27.0" prefWidth="171.0" />
+                                          <Label fx:id="lbDNFuncionario" layoutX="291.0" layoutY="50.0" text="Data de nascimento" />
+                                          <DatePicker fx:id="dpDNFuncionario" layoutX="439.0" layoutY="45.0" />
+                                          <Label fx:id="lbTelefoneFuncionario" layoutX="12.0" layoutY="86.0" text="Telefone" />
+                                          <TextField fx:id="tfTelefoneFuncionario" layoutX="75.0" layoutY="81.0" prefHeight="27.0" prefWidth="168.0" />
+                                          <Label fx:id="lbEnderecoFuncionario" layoutX="12.0" layoutY="121.0" text="Endereço" />
+                                          <TextField fx:id="tfEnderecoFuncionario" layoutX="75.0" layoutY="116.0" prefHeight="27.0" prefWidth="559.0" />
+                                          <Label fx:id="lbNumeroFuncionario" layoutX="13.0" layoutY="155.0" text="Número" />
+                                          <TextField fx:id="tfNumeroFuncionario" layoutX="75.0" layoutY="150.0" />
+                                          <Label fx:id="lbComplementoFuncionario" layoutX="256.0" layoutY="155.0" text="Complemento" />
+                                          <TextField fx:id="tfComplementoFuncionario" layoutX="352.0" layoutY="150.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbBairroFuncionario" layoutX="15.0" layoutY="190.0" text="Bairro" />
+                                          <TextField fx:id="tfBairroFuncionario" layoutX="75.0" layoutY="185.0" prefWidth="166.0" />
+                                          <Label fx:id="lbCidadeFuncionario" layoutX="257.0" layoutY="190.0" text="Cidade" />
+                                          <TextField fx:id="tfCidadeFuncionario" layoutX="352.0" layoutY="185.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbEstadoFuncionario" layoutX="14.0" layoutY="226.0" text="Estado" />
+                                          <ComboBox fx:id="cbEstadoFuncionario" layoutX="73.0" layoutY="221.0" prefHeight="27.0" prefWidth="166.0" />
+                                          <Label fx:id="lbCepFuncionario" layoutX="260.0" layoutY="226.0" text="CEP" />
+                                          <TextField fx:id="tfCepFuncionario" layoutX="352.0" layoutY="221.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbLogin" layoutX="17.0" layoutY="264.0" text="Login" />
+                                          <TextField fx:id="tfLogin" layoutX="73.0" layoutY="259.0" />
+                                          <Label fx:id="lbSenha" layoutX="260.0" layoutY="264.0" text="Senha" />
+                                          <PasswordField fx:id="pfSenha" layoutX="352.0" layoutY="259.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Button fx:id="btnCadastrarFuncionario" layoutX="467.0" layoutY="309.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCancelarFuncionario" layoutX="560.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
                                        </children>
                                     </AnchorPane>
                               </content>
                             </TitledPane>
                             <TitledPane animated="false" text="Cliente Físico">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                	<children>
+                                          <Label fx:id="lbNomeClienteFisico" layoutX="14.0" layoutY="14.0" text="Nome" />
+                                          <TextField fx:id="tfNomeClienteFisico" layoutX="73.0" layoutY="9.0" prefHeight="27.0" prefWidth="565.0" />
+                                          <Label fx:id="lbCpfClienteFisico" layoutX="14.0" layoutY="50.0" text="CPF" />
+                                          <TextField fx:id="tfCpfClienteFisico" layoutX="74.0" layoutY="45.0" prefHeight="27.0" prefWidth="171.0" />
+                                          <Label fx:id="lbDataNClienteFisico" layoutX="291.0" layoutY="50.0" text="Data de nascimento" />
+                                          <DatePicker fx:id="dpDataNClienteFisico" layoutX="439.0" layoutY="45.0" />
+                                          <Label fx:id="lbTelefoneClienteFisico" layoutX="12.0" layoutY="86.0" text="Telefone" />
+                                          <TextField fx:id="tfTelefoneClienteFisico" layoutX="75.0" layoutY="81.0" prefHeight="27.0" prefWidth="168.0" />
+                                          <Label fx:id="lbEnderecoClienteFisico" layoutX="12.0" layoutY="121.0" text="Endereço" />
+                                          <TextField fx:id="tfEnderecoClienteFisico" layoutX="75.0" layoutY="116.0" prefHeight="27.0" prefWidth="559.0" />
+                                          <Label fx:id="lbNumeroClienteFisico" layoutX="13.0" layoutY="155.0" text="Número" />
+                                          <TextField fx:id="tfNumeroClienteFisico" layoutX="75.0" layoutY="150.0" />
+                                          <Label fx:id="lbComplementoClienteFisico" layoutX="256.0" layoutY="155.0" text="Complemento" />
+                                          <TextField fx:id="tfComplementoClienteFisico" layoutX="352.0" layoutY="150.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbBairroClienteFisico" layoutX="15.0" layoutY="190.0" text="Bairro" />
+                                          <TextField fx:id="tfBairroClienteFisico" layoutX="75.0" layoutY="185.0" prefWidth="166.0" />
+                                          <Label fx:id="lbCidadeClienteFisico" layoutX="257.0" layoutY="190.0" text="Cidade" />
+                                          <TextField fx:id="tfCidadeClienteFisico" layoutX="352.0" layoutY="185.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbEstadoClienteFisico" layoutX="14.0" layoutY="226.0" text="Estado" />
+                                          <ComboBox fx:id="cbEstadoClienteFisico" layoutX="73.0" layoutY="221.0" prefHeight="27.0" prefWidth="166.0" />
+                                          <Label fx:id="lbCepClienteFisico" layoutX="260.0" layoutY="226.0" text="CEP" />
+                                          <TextField fx:id="tfCepClienteFisico" layoutX="352.0" layoutY="221.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbProfissaoClienteFisico" layoutX="13.0" layoutY="262.0" text="Profissão" />
+                                          <TextField fx:id="tfProfissaoClienteFisico" layoutX="73.0" layoutY="257.0" prefHeight="27.0" prefWidth="228.0" />
+                                          <Label fx:id="lbEstadoCivilClienteFisico" layoutX="318.0" layoutY="262.0" text="Estado Civil" />
+                                          <TextField fx:id="tfEstadoCivelClienteFisico" layoutX="404.0" layoutY="257.0" prefHeight="27.0" prefWidth="229.0" />
+                                          <Button fx:id="btnCadastrarClienteFisico" layoutX="467.0" layoutY="309.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCancelarClienteFisico" layoutX="560.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
+                                       </children>
+                                </AnchorPane>
                               </content>
                             </TitledPane>
                             <TitledPane animated="false" text="Cliente Jurídico">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                	<children>
+                                          <Label fx:id="lbRazaoSocial" layoutX="14.0" layoutY="14.0" text="Razão Social" />
+                                          <TextField fx:id="tfRazaoSocial" layoutX="98.0" layoutY="9.0" prefHeight="27.0" prefWidth="540.0" />
+                                          <Label fx:id="lbCnpj" layoutX="14.0" layoutY="50.0" text="CNPJ" />
+                                          <TextField fx:id="tfCnpj" layoutX="98.0" layoutY="45.0" prefHeight="27.0" prefWidth="211.0" />
+                                          <Label fx:id="lbTelefoneClienteJuridico" layoutX="377.0" layoutY="50.0" text="Telefone" />
+                                          <TextField fx:id="tfTelefoneClienteJuridico" layoutX="445.0" layoutY="45.0" prefHeight="27.0" prefWidth="193.0" />
+                                          <Label fx:id="lbEnderecoClienteJuridico" layoutX="13.0" layoutY="90.0" text="Endereço" />
+                                          <TextField fx:id="tfEnderecoClienteJuridico" layoutX="76.0" layoutY="85.0" prefHeight="27.0" prefWidth="559.0" />
+                                          <Label fx:id="lbNumeroClienteJuridico" layoutX="14.0" layoutY="124.0" text="Número" />
+                                          <TextField fx:id="tfNumeroClienteJuridico" layoutX="76.0" layoutY="119.0" />
+                                          <Label fx:id="lbComplementoClienteJuridico" layoutX="257.0" layoutY="124.0" text="Complemento" />
+                                          <TextField fx:id="tfComplementoClienteJuridico" layoutX="353.0" layoutY="119.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbBairroClienteJuridico" layoutX="16.0" layoutY="159.0" text="Bairro" />
+                                          <TextField fx:id="tfBairroClienteJuridico" layoutX="76.0" layoutY="154.0" prefWidth="166.0" />
+                                          <Label fx:id="lbCidadeClienteJuridico" layoutX="258.0" layoutY="159.0" text="Cidade" />
+                                          <TextField fx:id="tfCidadeClienteJuridico" layoutX="353.0" layoutY="154.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Label fx:id="lbEstadoClienteJuridico" layoutX="15.0" layoutY="195.0" text="Estado" />
+                                          <ComboBox fx:id="cbEstadoClienteJuridico" layoutX="74.0" layoutY="190.0" prefHeight="27.0" prefWidth="166.0" />
+                                          <Label fx:id="lbCepClienteJuridico" layoutX="261.0" layoutY="195.0" text="CEP" />
+                                          <TextField fx:id="tfCepClienteJuridico" layoutX="353.0" layoutY="190.0" prefHeight="27.0" prefWidth="282.0" />
+                                          <Button fx:id="btnCadastrarClienteJuridico" layoutX="467.0" layoutY="309.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCancelarClienteJuridico" layoutX="560.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
+                                       </children>
+                                </AnchorPane>
                               </content>
                             </TitledPane>
+                              <TitledPane animated="false" text="Veículo">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lbClienteVeiculo" layoutX="14.0" layoutY="14.0" text="Cliente" />
+                                          <ComboBox fx:id="cbClienteVeiculo" layoutX="76.0" layoutY="9.0" prefHeight="27.0" prefWidth="274.0" />
+                                          <Label fx:id="lbModelo" layoutX="14.0" layoutY="55.0" text="Modelo" />
+                                          <TextField fx:id="tfCModelo" layoutX="76.0" layoutY="50.0" prefHeight="27.0" prefWidth="276.0" />
+                                          <Label fx:id="lbChassi" layoutX="14.0" layoutY="96.0" text="Chassi" />
+                                          <TextField fx:id="tfChassi" layoutX="76.0" layoutY="91.0" prefHeight="27.0" prefWidth="277.0" />
+                                          <Label fx:id="lbRenavam" layoutX="14.0" layoutY="136.0" text="Renavam" />
+                                          <TextField fx:id="tfRenavam" layoutX="76.0" layoutY="131.0" prefHeight="27.0" prefWidth="277.0" />
+                                          <Label fx:id="lbAnoModelo" layoutX="480.0" layoutY="14.0" text="Ano do modelo" />
+                                          <DatePicker fx:id="dpAnoModelo" layoutX="430.0" layoutY="50.0" />
+                                          <Label fx:id="lbAnoFabricacao" layoutX="469.0" layoutY="96.0" text="Ano de Fabricação" />
+                                          <DatePicker fx:id="dpAnoFabricacao" layoutX="430.0" layoutY="131.0" />
+                                          <Button fx:id="btnCadastrarVeiculo" layoutX="448.0" layoutY="242.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCancelarVeiculo" layoutX="551.0" layoutY="242.0" mnemonicParsing="false" text="Cancelar" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane animated="false" text="Seguro">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lbClienteSeguro" layoutX="14.0" layoutY="14.0" text="Cliente" />
+                                          <ComboBox fx:id="cbClienteSeguro" layoutX="74.0" layoutY="9.0" prefHeight="27.0" prefWidth="283.0" />
+                                          <Label fx:id="lbVeiculoSeguro" layoutX="14.0" layoutY="57.0" text="Veículo" />
+                                          <ComboBox fx:id="cbVeiculoSeguro" layoutX="74.0" layoutY="52.0" prefHeight="27.0" prefWidth="283.0" />
+                                          <Label fx:id="lbBonusSeguro" layoutX="14.0" layoutY="101.0" text="Bônus" />
+                                          <TextField fx:id="tfBonusSeguro" layoutX="74.0" layoutY="96.0" prefHeight="27.0" prefWidth="105.0" />
+                                          <Label fx:id="lbInicioVigenciaSeguro" layoutX="463.0" layoutY="57.0" text="Início da Vigência" />
+                                          <DatePicker fx:id="dpInicioVigenciaSeguro" layoutX="419.0" layoutY="96.0" />
+                                          <Label fx:id="lbFimVigenciaSeguro" layoutX="464.0" layoutY="144.0" text="Fim da Vigência" />
+                                          <DatePicker fx:id="dpFimVigenciaSeguro" layoutX="420.0" layoutY="178.0" />
+                                          <Label fx:id="lbCompanhiaSeguro" layoutX="14.0" layoutY="144.0" text="Companhia" />
+                                          <TextField fx:id="tfCompanhiaSeguro" layoutX="14.0" layoutY="178.0" prefHeight="27.0" prefWidth="388.0" />
+                                          <Button fx:id="btnCadastrarSeguro" layoutX="438.0" layoutY="249.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCancelarSeguro" layoutX="541.0" layoutY="249.0" mnemonicParsing="false" text="Cancelar" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                              <TitledPane animated="false" text="Venda">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lbFuncionarioVenda" layoutX="14.0" layoutY="14.0" text="Funcionário" />
+                                          <TextField fx:id="tfFuncionarioVenda" layoutX="106.0" layoutY="9.0" prefHeight="27.0" prefWidth="301.0" />
+                                          <Label fx:id="lbSeguroVenda" layoutX="14.0" layoutY="55.0" text="Seguro" />
+                                          <ComboBox fx:id="cbSeguroVenda" layoutX="106.0" layoutY="50.0" prefHeight="27.0" prefWidth="300.0" />
+                                          <Label fx:id="lbValorSeguro" layoutX="13.0" layoutY="98.0" text="Valor" />
+                                          <TextField layoutX="106.0" layoutY="93.0" prefHeight="27.0" prefWidth="298.0" />
+                                          <Button fx:id="btnCadastrarVenda" layoutX="463.0" layoutY="170.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCancelarVenda" layoutX="561.0" layoutY="170.0" mnemonicParsing="false" text="Cancelar" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
                           </panes>
                         </Accordion>
                      </children>
