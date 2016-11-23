@@ -10,10 +10,13 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
@@ -201,12 +204,75 @@
           </Tab>
           <Tab text="Pesquisar">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="cbPesquisa" layoutX="12.0" layoutY="32.0" prefHeight="27.0" prefWidth="145.0" />
+                        <TextField fx:id="tfPesquisa" layoutX="167.0" layoutY="32.0" prefHeight="27.0" prefWidth="470.0" />
+                        <TreeTableView layoutX="12.0" layoutY="139.0" prefHeight="481.0" prefWidth="625.0">
+                          <columns>
+                            <TreeTableColumn prefWidth="75.0" text="C1" />
+                            <TreeTableColumn prefWidth="75.0" text="C2" />
+                              <TreeTableColumn prefWidth="75.0" text="Column X" />
+                              <TreeTableColumn prefWidth="75.0" text="Column X" />
+                              <TreeTableColumn prefWidth="75.0" text="Column X" />
+                              <TreeTableColumn prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TreeTableView>
+                        <Button fx:id="btnPesquisar" layoutX="488.0" layoutY="81.0" mnemonicParsing="false" text="Pesquisar" />
+                        <Button fx:id="btnLimparPesquisa" layoutX="577.0" layoutY="81.0" mnemonicParsing="false" text="Limpar" />
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Relatórios">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Accordion prefHeight="650.0" prefWidth="649.0">
+                          <panes>
+                            <TitledPane animated="false" text="Funcionários">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lbRelatorioFuncionario" layoutX="20.0" layoutY="126.0" text="Funcionário" />
+                                          <ComboBox fx:id="cbRelatorioPorFuncionario" layoutX="101.0" layoutY="121.0" prefHeight="27.0" prefWidth="467.0" />
+                                          <Button fx:id="cbGerarPorFuncionario" layoutX="582.0" layoutY="121.0" mnemonicParsing="false" text="Gerar" />
+                                          <Label fx:id="lbTodosFuncionariosRelatorio" layoutX="421.0" layoutY="260.0" text="Todos os Funcionários" />
+                                          <Button fx:id="btnGerarTodosFuncionarios" layoutX="577.0" layoutY="255.0" mnemonicParsing="false" text="Gerar" />
+                                          <Text layoutX="260.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vendas por Funcionário" />
+                                          <Text layoutX="240.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Venda de todos os Funcionários" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Clientes">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="lbClienteFisicoRelatorio" layoutX="21.0" layoutY="92.0" text="Cliente Físico" />
+                                          <ComboBox fx:id="cbClienteFisicoRelatorio" layoutX="134.0" layoutY="87.0" prefHeight="27.0" prefWidth="424.0" />
+                                          <Button fx:id="btnGeraClienteFisico" layoutX="574.0" layoutY="87.0" mnemonicParsing="false" text="Gerar" />
+                                          <Text layoutX="281.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes Ativos" />
+                                          <Label fx:id="lbClienteJuridicoRelatorio" layoutX="24.0" layoutY="155.0" text="Cliente Jurídico" />
+                                          <ComboBox fx:id="cbClienteJuridicoRelatorio" layoutX="135.0" layoutY="150.0" prefHeight="27.0" prefWidth="424.0" />
+                                          <Button fx:id="btnGeraClienteJuridico" layoutX="575.0" layoutY="149.0" mnemonicParsing="false" text="Gerar" />
+                                          <Text layoutX="276.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes Inativos" />
+                                          <Label fx:id="lbClientesInativos" layoutX="451.0" layoutY="268.0" text="Clientes Inativos" />
+                                          <Button fx:id="btnGeraClienteInativo" layoutX="575.0" layoutY="263.0" mnemonicParsing="false" text="Gerar" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane animated="false" text="Vendas">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Text layoutX="273.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vendas mensais" />
+                                       </children></AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children></AnchorPane>
               </content>
             </Tab>
         </tabs>
