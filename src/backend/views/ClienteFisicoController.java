@@ -1,4 +1,4 @@
-package backend.controllers;
+package backend.views;
 
 import backend.models.ClienteFisico;
 
