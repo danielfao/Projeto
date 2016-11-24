@@ -174,7 +174,7 @@
                                           <DatePicker fx:id="dpFimVigenciaSeguro" layoutX="420.0" layoutY="178.0" />
                                           <Label layoutX="14.0" layoutY="144.0" text="Companhia" />
                                           <TextField fx:id="tfCompanhiaSeguro" layoutX="14.0" layoutY="178.0" prefHeight="27.0" prefWidth="388.0" />
-                                          <Button fx:id="btnCadastrarSeguro" layoutX="438.0" layoutY="249.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCadastrarSeguro" layoutX="438.0" layoutY="249.0" mnemonicParsing="false" onAction="#cadastrarSeguro" text="Cadastrar" />
                                           <Button fx:id="btnCancelarSeguro" layoutX="541.0" layoutY="249.0" mnemonicParsing="false" text="Cancelar" />
                                        </children>
                                     </AnchorPane>
@@ -185,13 +185,15 @@
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
                                           <Label layoutX="14.0" layoutY="14.0" text="Funcionário" />
-                                          <TextField fx:id="tfFuncionarioVenda" layoutX="106.0" layoutY="9.0" prefHeight="27.0" prefWidth="301.0" />
                                           <Label layoutX="14.0" layoutY="55.0" text="Seguro" />
                                           <ComboBox fx:id="cbSeguroVenda" layoutX="106.0" layoutY="50.0" prefHeight="27.0" prefWidth="300.0" />
-                                          <Label layoutX="13.0" layoutY="98.0" text="Valor" />
-                                          <TextField layoutX="106.0" layoutY="93.0" prefHeight="27.0" prefWidth="298.0" />
-                                          <Button fx:id="btnCadastrarVenda" layoutX="463.0" layoutY="170.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Label layoutX="13.0" layoutY="98.0" text="Valor Liquido" />
+                                          <TextField fx:id="tfValorLiquido" layoutX="106.0" layoutY="93.0" prefHeight="27.0" prefWidth="298.0" />
+                                          <Button fx:id="btnCadastrarVenda" layoutX="463.0" layoutY="170.0" mnemonicParsing="false" onAction="#cadastrarVenda" text="Cadastrar" />
                                           <Button fx:id="btnCancelarVenda" layoutX="561.0" layoutY="170.0" mnemonicParsing="false" text="Cancelar" />
+                                          <ComboBox fx:id="cbFuncionarioVenda" layoutX="106.0" layoutY="9.0" prefHeight="27.0" prefWidth="300.0" />
+                                          <Label layoutX="12.0" layoutY="136.0" text="Comissão" />
+                                          <TextField fx:id="tfComissaoVenda" layoutX="106.0" layoutY="131.0" prefHeight="27.0" prefWidth="299.0" />
                                        </children>
                                     </AnchorPane>
                                 </content>

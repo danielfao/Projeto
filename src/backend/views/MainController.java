@@ -189,11 +189,17 @@ public class MainController {
     private Button btnCancelarSeguro;
 
     @FXML
-    private TextField tfFuncionarioVenda;
+    private ComboBox<?> cbFuncionarioVenda;
 
     @FXML
     private ComboBox<?> cbSeguroVenda;
 
+    @FXML
+    private TextField tfValorLiquido;
+    
+    @FXML
+    private TextField tfComissaoVenda;
+    
     @FXML
     private Button btnCadastrarVenda;
 
@@ -238,6 +244,16 @@ public class MainController {
 
     @FXML
     void cadastrarFuncionario(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void cadastrarSeguro(ActionEvent event) {
+
+    }
+
+    @FXML
+    void cadastrarVenda(ActionEvent event) {
 
     }
 
