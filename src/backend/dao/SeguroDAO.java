@@ -19,9 +19,9 @@ public class SeguroDAO {
 		connection = ConnectionFactory.getConnection();
 	}
 
-	public void inserir (Seguro seguro) {
+	public boolean inserir (Seguro seguro) {
 		String sql = "INSERT INTO Seguro(idVeiculo, bonus, companhia, sinistro, ativo, dataInicialVigencia, "
-				+ "dataFinalVigencia, idClienteJuridico, idClienteFisico) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+				+ "dataFinalVigencia, idClienteFisico) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql); 
 			stmt.setInt(1, seguro.getVeiculoSeguro());
@@ -31,14 +31,16 @@ public class SeguroDAO {
 			stmt.setBoolean(5, seguro.isAtivo());
 			stmt.setString(6, seguro.getInicioVigencia());
 			stmt.setString(7, seguro.getFinalVigencia());
-			stmt.setInt(8, seguro.getEmpresa());
+			//stmt.setInt(8, seguro.getEmpresa());
 			stmt.setInt(9, seguro.getPessoa());
 
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+			return false;
 		}
+		return true;
 	}
 
 	public List<Seguro> pesquisar (Seguro seguro) throws SQLException {
@@ -50,7 +52,7 @@ public class SeguroDAO {
 
 		while (rs.next()) {
 			Seguro seguro1 = new Seguro();
-			seguro1.setVeiculoSeguro(rs.getInt("idVeiculo")); 
+			seguro1.setVeiculoSeguro((Veiculo) rs.getObject("idVeiculo")); 
 			seguro1.setBonus(rs.getInt("bonus")); 
 			seguro1.setCompanhia(rs.getString("companhia"));
 			seguro1.setSinistro(rs.getBoolean("sinistro"));

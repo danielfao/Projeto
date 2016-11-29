@@ -138,8 +138,8 @@ public class Seguro implements IAlteraSeguro{
 	 * 
 	 * @param veiculoSeguro
 	 */
-	public void setVeiculoSeguro(int idVeiculoSeguro) {
-		this.idVeiculoSeguro = veiculoSeguro.getIdVeiculo();
+	public void setVeiculoSeguro(Veiculo veiculo1) {
+		this.idVeiculoSeguro = veiculo1.getIdVeiculo();
 	}
 	
 	/** Getter method related to instance of the attribute.

@@ -16,6 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableColumn;
+import javafx.stage.Popup;
 
 public class MainController {
 
@@ -303,21 +304,31 @@ public class MainController {
 
 		//descobrir como buscar as informações vindas do formulário para preencher o construtor.
 		Seguro seguro = new Seguro();
-		/*seguro.setPessoa(this.cbClienteSeguro.getValue());
-		seguro.setVeiculoSeguro(this.cbVeiculoSeguro.getValue());
+		//seguro.setPessoa(this.cbClienteSeguro.getValue());
+		//seguro.setVeiculoSeguro(this.cbVeiculoSeguro.getValue());
 		seguro.setInicioVigencia(String.valueOf(this.dpInicioVigenciaSeguro.getValue()));
 		seguro.setFinalVigencia(String.valueOf(this.dpFimVigenciaSeguro.getValue()));
 		seguro.setCompanhia(this.tfCompanhiaSeguro.getText());
-		seguro.setBonus(Integer.parseInt(this.tfBonusSeguro.getText()));*/
+		seguro.setBonus(Integer.parseInt(this.tfBonusSeguro.getText()));
 		ClienteFisico clienteF1 = new ClienteFisico("Jose da Silva", "123", "09/10/1990", "(16)3355-5221", "Rua das Orquideas", 123, "Jd Paola", "13690-000", "Descalvado" , "SP", "Funcionario publico", "Casado");
 		seguro.setPessoa(clienteF1);
-		seguro.setVeiculoSeguro(1);
-		seguro.setInicioVigencia("2016-08-20");
-		seguro.setFinalVigencia("2017-08-20");
-		seguro.setCompanhia("Porto Seguro");
-		seguro.setBonus(0);
+		Veiculo veiculo1 = new Veiculo("Astra 2.0", "9BD12AUH8123876", "ABC-1992", 2012, 2013, 489374560, clienteF1);
+		seguro.setVeiculoSeguro(veiculo1);
+		//seguro.setInicioVigencia("2016-08-20");
+		//seguro.setFinalVigencia("2017-08-20");
+		//seguro.setCompanhia("Porto Seguro");
+		//seguro.setBonus(0);
 		SeguroDAO segDAO = new SeguroDAO();
-		segDAO.inserir(seguro);
+		if(segDAO.inserir(seguro)){
+			dpInicioVigenciaSeguro.getEditor().clear();
+			dpFimVigenciaSeguro.getEditor().clear();
+			tfCompanhiaSeguro.clear();
+			tfBonusSeguro.clear();
+		}
+		else{
+			Popup error = new Popup();
+			error.show(error);
+		}
 
 	}
 

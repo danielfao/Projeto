@@ -6,7 +6,7 @@ package backend.models;
  *
  */
 public class Veiculo {
-	private int idVeiculo;
+	private int idVeiculo=1;
 	private String modelo;
 	private String chassi;
 	private String placa;

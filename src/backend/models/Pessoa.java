@@ -6,7 +6,7 @@ package backend.models;
  *
  */
 public abstract class Pessoa {
-	private int id;
+	private int id=2;
 	private String nome = "";
 	private String cpf = "";
 	private String dataNascimento = "";

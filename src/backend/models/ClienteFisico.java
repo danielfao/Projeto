@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
-	Scanner ler = new Scanner(System.in);
 	
 	/** Constructor method with complemento attribute.
 	 * 
