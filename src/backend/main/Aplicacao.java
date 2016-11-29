@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import backend.models.ClienteFisico;
 import backend.models.ClienteJuridico;
-import backend.models.Relatorio;
 import backend.models.Seguro;
 import backend.models.Usuario;
 import backend.models.Veiculo;

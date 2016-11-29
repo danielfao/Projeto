@@ -310,9 +310,9 @@ public class MainController {
 		seguro.setFinalVigencia(String.valueOf(this.dpFimVigenciaSeguro.getValue()));
 		seguro.setCompanhia(this.tfCompanhiaSeguro.getText());
 		seguro.setBonus(Integer.parseInt(this.tfBonusSeguro.getText()));
-		ClienteFisico clienteF1 = new ClienteFisico("Jose da Silva", "123", "09/10/1990", "(16)3355-5221", "Rua das Orquideas", 123, "Jd Paola", "13690-000", "Descalvado" , "SP", "Funcionario publico", "Casado");
+		ClienteFisico clienteF1 = new ClienteFisico("Gilberto Silva", "12345678912", "09/10/1990", "(16)33311111", "Av Sao Carlos", 1245, "Centro", "12345-567", "Sao Carlos" , "SP", "Vendedor", "Casado");
 		seguro.setPessoa(clienteF1);
-		Veiculo veiculo1 = new Veiculo("Astra 2.0", "9BD12AUH8123876", "ABC-1992", 2012, 2013, 489374560, clienteF1);
+		Veiculo veiculo1 = new Veiculo("Celta 1.0", "9BHCG134JVH", "DNH-1213", 2012, 2012, 864829018, clienteF1);
 		seguro.setVeiculoSeguro(veiculo1);
 		//seguro.setInicioVigencia("2016-08-20");
 		//seguro.setFinalVigencia("2017-08-20");
