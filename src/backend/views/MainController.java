@@ -292,14 +292,6 @@ public class MainController {
 		SeguroDAO segDAO = new SeguroDAO();
 		segDAO.inserir(seguro);
 
-		//Tentar entender o porque dos erros
-		List<Seguro> seguros = segDAO.pesquisar(seguro);
-		for (Seguro seg : seguros) {
-			System.out.println(seg.getBonus() + "Bonus: " + seg.getCompanhia() + "Companhia: " + seg.getVeiculoSeguro() + "Veiculo: "
-					+ seg.getInicioVigencia() + " Inicio Vigencia: " + seg.getFinalVigencia() + "Final Vigencia: " + seg.getEmpresa() 
-					+ "Cliente Juridico : " + seg.getPessoa() + "Cliente Fisico: "); 
-		}
-
 	}
 
 	@FXML
@@ -314,7 +306,16 @@ public class MainController {
 
 	@FXML
 	void pesquisar(ActionEvent event) {
+		//Tentar entender o porque dos erros
+		Seguro seguro = new Seguro();
+		SeguroDAO segDAO = new SeguroDAO();
+
+		List<Seguro> seguros = segDAO.pesquisar(seguro);
+		for (Seguro seg : seguros) {
+			System.out.println(seg.getBonus() + "Bonus: " + seg.getCompanhia() + "Companhia: " + seg.getVeiculoSeguro() + "Veiculo: "
+					+ seg.getInicioVigencia() + " Inicio Vigencia: " + seg.getFinalVigencia() + "Final Vigencia: " + seg.getEmpresa() 
+					+ "Cliente Juridico : " + seg.getPessoa() + "Cliente Fisico: "); 
+		}
 
 	}
-
 }
