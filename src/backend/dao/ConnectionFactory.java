@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ConnectionFactory {
-	public Connection getConnection(){
+	public static Connection getConnection(){
 	try{
 		return
 				DriverManager.getConnection("jdbc:mysql://localhost/SIGCor", "root","");
@@ -62,3 +62,4 @@ public class ConnectionFactory {
 
 	
 	}
+}
