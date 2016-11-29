@@ -74,14 +74,14 @@ public class Aplicacao {
 		
 		seguro1.cancelarSeguro("01/05/2016");
 		
-		Relatorio relatorio = new Relatorio();
+		/*Relatorio relatorio = new Relatorio();
 		relatorio.gerarVendasPorFuncionario(usuario1, vendas);
 		relatorio.gerarVendasPorFuncionario(usuario2, vendas);
 		relatorio.gerarVendasPorFuncionario(usuario3, vendas);
 		relatorio.gerarVendasTodosFuncionarios(usuarios, vendas);
 		relatorio.gerarSegurosAtivosPorClienteFisico(clienteF1, vendas);
 		relatorio.gerarSegurosAtivosPorClienteJuridico(clienteJ1, vendas);
-		relatorio.gerarSegurosInativos(seguros);
+		relatorio.gerarSegurosInativos(seguros);*/
 	}
 
 }

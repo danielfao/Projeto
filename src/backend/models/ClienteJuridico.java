@@ -7,6 +7,7 @@ package backend.models;
  * 
  */
 public class ClienteJuridico {
+	private int id;
 	private String razaoSocial;
 	private String cnpj;
 	private String telefone;
@@ -69,7 +70,11 @@ public class ClienteJuridico {
 		this.estado = estado;	
 		cadastrarClienteJuridico();
 	}
-
+	
+	public int getId() {
+		return id;
+	}
+	
 	/** Getter method related to instance of the attribute
 	 * 
 	 * @return razaoSocial

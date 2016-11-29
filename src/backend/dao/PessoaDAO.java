@@ -1,4 +1,4 @@
-package backend.dao;
+/*package backend.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -111,9 +111,9 @@ public class PessoaDAO {
 		}finally{
 			ConnectionFactory.closeConnection(con , stmt);
 		}
-	}
+	}*/
 
-	/*//Não deletaremos nenhuma informação
+	/*Não deletaremos nenhuma informação
 	public void delete(Pessoa p){
 
 		Connection con = ConnectionFactory.getConnection();
@@ -134,4 +134,4 @@ public class PessoaDAO {
 			ConnectionFactory.closeConnection(con , stmt);
 		}
 	}*/
-}
+//}

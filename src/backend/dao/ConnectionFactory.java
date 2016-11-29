@@ -12,7 +12,7 @@ public class ConnectionFactory {
 	public static Connection getConnection(){
 		try{
 			return
-					DriverManager.getConnection("jdbc:mysql://localhost/SIGCor", "root","");
+					DriverManager.getConnection("jdbc:sqlite:/Users/Windows 8/Documents/GitHub/SIGCor/bd/SIGCor.db");
 
 		}catch (SQLException e){
 			throw new RuntimeException(e);

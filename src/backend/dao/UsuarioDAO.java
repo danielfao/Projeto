@@ -18,7 +18,7 @@ public class UsuarioDAO {
 	ResultSet rs = null;
 	boolean check = false;
 
-	try{
+	/*try{
 		stmt = con.prepareStatement ("SELECT * from Usuario WHERE login = ? and senha = ?");
 		stmt.setString(1, login);
 		stmt.setString(2, senha);
@@ -28,7 +28,7 @@ public class UsuarioDAO {
 		if(rs.next()) {
 			Usuario Usuario = new Usuario();
 
-			Usuario.setIdPessoa(rs.getInt("idPessoa"));
+			Usuario.setId(rs.getInt("idPessoa"));
 			Usuario.setLogin(rs.getString("login"));
 			Usuario.setSenha(rs.getString("senha"));
 		}
@@ -37,9 +37,10 @@ public class UsuarioDAO {
 		Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
 	}finally{
 		ConnectionFactory.closeConnection(con , stmt,rs);
-	}
+	}*/
 
 	return check;
 
 	}
+
 }

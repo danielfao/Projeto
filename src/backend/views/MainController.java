@@ -1,8 +1,12 @@
 package backend.views;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import backend.dao.SeguroDAO;
+import backend.models.ClienteFisico;
 import backend.models.Seguro;
+import backend.models.Veiculo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -168,8 +172,20 @@ public class MainController {
 	@FXML
 	private Button btnCancelarVeiculo;
 
+	//@FXML
+	//private ComboBox<?> cbClienteSeguro;
+	
 	@FXML
-	private ComboBox<?> cbClienteSeguro;
+	private ComboBox<String> cbClienteSeguro;
+	
+	private void popularCB(List<ClienteFisico> clientes){
+		this.cbClienteSeguro.getItems().clear();
+		
+		for (ClienteFisico tmpCliente : clientes){
+			this.cbClienteSeguro.getItems().add(tmpCliente.getNome());
+		}
+		
+	}
 
 	@FXML
 	private ComboBox<?> cbVeiculoSeguro;
@@ -282,13 +298,24 @@ public class MainController {
 	}
 
 	@FXML
-	void cadastrarSeguro(ActionEvent event) {
+	void cadastrarSeguro(ActionEvent event) throws IOException {
 		//OBS: Coloquei o CRUD aqui apenas para exemplificar - porém cada um é pra uma função específica.
 
 		//descobrir como buscar as informações vindas do formulário para preencher o construtor.
 		Seguro seguro = new Seguro();
-		//descobrir como pegar as informações vindas do formulário
-
+		/*seguro.setPessoa(this.cbClienteSeguro.getValue());
+		seguro.setVeiculoSeguro(this.cbVeiculoSeguro.getValue());
+		seguro.setInicioVigencia(String.valueOf(this.dpInicioVigenciaSeguro.getValue()));
+		seguro.setFinalVigencia(String.valueOf(this.dpFimVigenciaSeguro.getValue()));
+		seguro.setCompanhia(this.tfCompanhiaSeguro.getText());
+		seguro.setBonus(Integer.parseInt(this.tfBonusSeguro.getText()));*/
+		ClienteFisico clienteF1 = new ClienteFisico("Jose da Silva", "123", "09/10/1990", "(16)3355-5221", "Rua das Orquideas", 123, "Jd Paola", "13690-000", "Descalvado" , "SP", "Funcionario publico", "Casado");
+		seguro.setPessoa(clienteF1);
+		seguro.setVeiculoSeguro(1);
+		seguro.setInicioVigencia("2016-08-20");
+		seguro.setFinalVigencia("2017-08-20");
+		seguro.setCompanhia("Porto Seguro");
+		seguro.setBonus(0);
 		SeguroDAO segDAO = new SeguroDAO();
 		segDAO.inserir(seguro);
 
@@ -305,7 +332,7 @@ public class MainController {
 	}
 
 	@FXML
-	void pesquisar(ActionEvent event) {
+	void pesquisar(ActionEvent event) throws SQLException {
 		//Tentar entender o porque dos erros
 		Seguro seguro = new Seguro();
 		SeguroDAO segDAO = new SeguroDAO();

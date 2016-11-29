@@ -17,7 +17,14 @@ public class Seguro implements IAlteraSeguro{
 	private String companhia;
 	private boolean sinistro=false;
 	private boolean ativo=true;
+	private int idPessoa;
+	private int idVeiculoSeguro;
+	private int idEmpresa;
 	
+	
+	public Seguro(){
+		
+	}
 	/** Constructor method that calls a object ClienteFisico.
 	 * 
 	 * @param pessoa
@@ -91,8 +98,8 @@ public class Seguro implements IAlteraSeguro{
 	 * 
 	 * @return pessoa
 	 */
-	public ClienteFisico getPessoa() {
-		return pessoa;
+	public int getPessoa() {
+		return idPessoa;
 	}
 	
 	/** Setter method related to instance of the attribute.
@@ -100,15 +107,15 @@ public class Seguro implements IAlteraSeguro{
 	 * @param pessoa
 	 */
 	public void setPessoa(ClienteFisico pessoa) {
-		this.pessoa = pessoa;
+		this.idPessoa = pessoa.getId();
 	}
 	
 	/** Getter method related to instance of the attribute.
 	 * 
 	 * @return empresa
 	 */
-	public ClienteJuridico getEmpresa() {
-		return empresa;
+	public int getEmpresa() {
+		return idEmpresa;
 	}
 	
 	/** Setter method related to instance of the attribute.
@@ -116,23 +123,23 @@ public class Seguro implements IAlteraSeguro{
 	 * @param empresa
 	 */
 	public void setEmpresa(ClienteJuridico empresa) {
-		this.empresa = empresa;
+		this.idEmpresa = empresa.getId();
 	}
 	
 	/** Getter method related to instance of the attribute.
 	 * 
 	 * @return veiculoSeguro
 	 */
-	public Veiculo getVeiculoSeguro() {
-		return veiculoSeguro;
+	public int getVeiculoSeguro() {
+		return idVeiculoSeguro;
 	}
 	
 	/** Setter method related to instance of the attribute.
 	 * 
 	 * @param veiculoSeguro
 	 */
-	public void setVeiculoSeguro(Veiculo veiculoSeguro) {
-		this.veiculoSeguro = veiculoSeguro;
+	public void setVeiculoSeguro(int idVeiculoSeguro) {
+		this.idVeiculoSeguro = veiculoSeguro.getIdVeiculo();
 	}
 	
 	/** Getter method related to instance of the attribute.
@@ -166,13 +173,7 @@ public class Seguro implements IAlteraSeguro{
 	 * @param finalVigencia
 	 */
 	public void setFinalVigencia(String finalVigencia) {
-		if(finalVigencia.equals(inicioVigencia) == false){
-			if(finalVigencia.compareTo(inicioVigencia) == -1){
-				this.finalVigencia = finalVigencia;
-			}
-			else 
-				System.out.println("Final de vigencia nao pode ser menor que o inicial.\n");
-		}
+		this.finalVigencia = finalVigencia;
 	}
 	
 	/** Getter method related to instance of the attribute.
@@ -303,15 +304,15 @@ public class Seguro implements IAlteraSeguro{
 	 */
 	@Override
 	public String toString(){
-		if(getPessoa()!= null){
+		//if(getPessoa()!= null){
 			return "Cliente: " + pessoa.getNome() + "\nSeguro do veiculo " + veiculoSeguro.getModelo() + " " + 
 				veiculoSeguro.getAnoFabricacao() + "/" + veiculoSeguro.getAnoModelo() + "\n";
 		}
-		else {
+		/*else {
 			return "Cliente: " + empresa.getRazaoSocial() + "\nSeguro do veiculo " + veiculoSeguro.getModelo() + " " + 
 					veiculoSeguro.getAnoFabricacao() + "/" + veiculoSeguro.getAnoModelo() + "\n";
 		}
-	}
+	}*/
 	
 	/** Method responsible to register a insurance.
 	 * 	Print if a insurance was register with success or not.

@@ -20,7 +20,7 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
-	public void gerarVendasPorFuncionario(Usuario usuario, List<Venda> vendas) throws IOException{
+	/*public void gerarVendasPorFuncionario(Usuario usuario, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("vendas" + usuario.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter (arquivo);
 		
@@ -59,7 +59,7 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
-	}
+	}*/
 	
 	/** Method responsible for creating sales reports in *.txt files of all employees.
 	 * 
@@ -67,7 +67,7 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
-	public void gerarVendasTodosFuncionarios(List<Usuario> usuarios, List<Venda> vendas) throws IOException{
+	/*public void gerarVendasTodosFuncionarios(List<Usuario> usuarios, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("vendasTotais.txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
@@ -107,7 +107,7 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
-	}
+	}*/
 	
 	/** Method responsible for creating insurance reports that are active, in text files of regular clients.
 	 * 
@@ -115,7 +115,7 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
-	public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
+	/*public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("seguros" + cliente.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
@@ -149,7 +149,7 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
-	}
+	}*/
 	
 	/** Method responsible for creating insurance reports that are active, in text files, by legal customer/client.
 	 * 
@@ -157,7 +157,7 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
-	public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
+	/*public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
 		Writer arquivo = new FileWriter("seguros" + cliente.getRazaoSocial().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
@@ -191,14 +191,14 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
-	}
+	}*/
 	
 	/** Method responsible for creating insurance reports that are inactive, in text files.
 	 * 
 	 * @param seguros
 	 * @throws IOException
 	 */
-	public void gerarSegurosInativos (List<Seguro> seguros) throws IOException{
+	/*public void gerarSegurosInativos (List<Seguro> seguros) throws IOException{
 		Writer arquivo = new FileWriter("segurosInativos.txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 
@@ -221,13 +221,10 @@ public class Relatorio {
 			}
 		}
 		
-		/*if (isInativo == false){
-			buffer.write("Nao existem seguros inativos!\n");
-		}*/
 		
 		System.out.println("Relatorio de seguros inativos gerado com sucesso!\n");
 
 		buffer.flush();
 		arquivo.close();
-	}
+	}*/
 }

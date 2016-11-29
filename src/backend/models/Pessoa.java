@@ -6,17 +6,18 @@ package backend.models;
  *
  */
 public abstract class Pessoa {
-	private String nome;
-	private String cpf;
-	private String dataNascimento;
-	private String telefone;
-	private String rua;
-	private int numero;
-	private String complemento;
-	private String bairro;
-	private String cep;
-	private String cidade;
-	private String estado;
+	private int id;
+	private String nome = "";
+	private String cpf = "";
+	private String dataNascimento = "";
+	private String telefone = "";
+	private String rua = "";
+	private int numero = 0;
+	private String complemento = "";
+	private String bairro = "";
+	private String cep = "";
+	private String cidade = "";
+	private String estado = "";
 	
 	/** Constructor method without complemento attribute.
 	 * 
@@ -248,9 +249,8 @@ public abstract class Pessoa {
 		this.estado = estado;
 	}
 
-	public Object getId() {
-		
-		return null;
+	public int getId() {
+		return id;
 	}
 	
 }

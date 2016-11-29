@@ -7,8 +7,8 @@ package backend.models;
  */
 public class Usuario extends Pessoa{
 	private int id;
-	private String login;
-	private String senha;
+	private String login = "";
+	private String senha = "";
 	
 	/** Constructor method without complemento attribute.
 	 * 
@@ -77,6 +77,10 @@ public class Usuario extends Pessoa{
 	 */
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id){
+		this.id = id;
 	}
 
 	/** Getter method related to instance of the attribute
