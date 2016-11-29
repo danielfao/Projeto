@@ -247,5 +247,10 @@ public abstract class Pessoa {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+	public Object getId() {
+		
+		return null;
+	}
 	
 }
