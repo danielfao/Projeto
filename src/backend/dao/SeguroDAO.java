@@ -13,7 +13,7 @@ public class SeguroDAO {
 	private Connection connection;
 
 	public SeguroDAO(){
-		connection = new ConnectionFactory().getConnection();
+		connection = ConnectionFactory.getConnection();
 	}
 
 	public void inserir (Seguro seguro) {
