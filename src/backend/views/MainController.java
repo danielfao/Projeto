@@ -1,7 +1,6 @@
 package backend.views;
 
 import java.util.List;
-
 import backend.dao.SeguroDAO;
 import backend.models.Seguro;
 import javafx.event.ActionEvent;
@@ -12,6 +11,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TreeTableColumn;
 
 public class MainController {
 
@@ -193,16 +193,10 @@ public class MainController {
 	private Button btnCancelarSeguro;
 
 	@FXML
-	private ComboBox<?> cbFuncionarioVenda;
-
-	@FXML
 	private ComboBox<?> cbSeguroVenda;
 
 	@FXML
 	private TextField tfValorLiquido;
-
-	@FXML
-	private TextField tfComissaoVenda;
 
 	@FXML
 	private Button btnCadastrarVenda;
@@ -211,10 +205,46 @@ public class MainController {
 	private Button btnCancelarVenda;
 
 	@FXML
+	private ComboBox<?> cbFuncionarioVenda;
+
+	@FXML
+	private TextField tfComissaoVenda;
+
+	@FXML
 	private ComboBox<?> cbPesquisa;
 
 	@FXML
 	private TextField tfPesquisa;
+
+	@FXML
+	private TreeTableColumn<?, ?> colIdSeguro;
+
+	@FXML
+	private TreeTableColumn<?, ?> colIdJuridico;
+
+	@FXML
+	private TreeTableColumn<?, ?> colIdFisico;
+
+	@FXML
+	private TreeTableColumn<?, ?> colIdVeiculo;
+
+	@FXML
+	private TreeTableColumn<?, ?> colCompanhia;
+
+	@FXML
+	private TreeTableColumn<?, ?> colBonus;
+
+	@FXML
+	private TreeTableColumn<?, ?> colSinistro;
+
+	@FXML
+	private TreeTableColumn<?, ?> colAtivo;
+
+	@FXML
+	private TreeTableColumn<?, ?> colDataInicio;
+
+	@FXML
+	private TreeTableColumn<?, ?> colDataFim;
 
 	@FXML
 	private Button btnPesquisar;
@@ -226,7 +256,7 @@ public class MainController {
 	private ComboBox<?> cbRelatorioPorFuncionario;
 
 	@FXML
-	private Button cbGerarPorFuncionario;
+	private Button btnGerarPorFuncionario;
 
 	@FXML
 	private Button btnGerarTodosFuncionarios;
@@ -254,7 +284,7 @@ public class MainController {
 	@FXML
 	void cadastrarSeguro(ActionEvent event) {
 		//OBS: Coloquei o CRUD aqui apenas para exemplificar - porém cada um é pra uma função específica.
-		
+
 		//descobrir como buscar as informações vindas do formulário para preencher o construtor.
 		Seguro seguro = new Seguro();
 		//descobrir como pegar as informações vindas do formulário
@@ -266,14 +296,24 @@ public class MainController {
 		List<Seguro> seguros = segDAO.pesquisar(seguro);
 		for (Seguro seg : seguros) {
 			System.out.println(seg.getBonus() + "Bonus: " + seg.getCompanhia() + "Companhia: " + seg.getVeiculoSeguro() + "Veiculo: "
-		+ seg.getInicioVigencia() + " Inicio Vigencia: " + seg.getFinalVigencia() + "Final Vigencia: " + seg.getEmpresa() 
-		+ "Cliente Juridico : " + seg.getPessoa() + "Cliente Fisico: "); 
+					+ seg.getInicioVigencia() + " Inicio Vigencia: " + seg.getFinalVigencia() + "Final Vigencia: " + seg.getEmpresa() 
+					+ "Cliente Juridico : " + seg.getPessoa() + "Cliente Fisico: "); 
 		}
 
 	}
 
 	@FXML
 	void cadastrarVenda(ActionEvent event) {
+
+	}
+
+	@FXML
+	void limparPesquisa(ActionEvent event) {
+
+	}
+
+	@FXML
+	void pesquisar(ActionEvent event) {
 
 	}
 

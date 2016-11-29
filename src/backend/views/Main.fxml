@@ -212,16 +212,16 @@
                         <TextField fx:id="tfPesquisa" layoutX="240.0" layoutY="32.0" prefHeight="27.0" prefWidth="645.0" />
                         <TreeTableView layoutX="12.0" layoutY="139.0" prefHeight="481.0" prefWidth="880.0">
                           <columns>
-                            <TreeTableColumn fx:id="idSeguro" prefWidth="51.0" text="ID" />
-                            <TreeTableColumn prefWidth="116.79342651367188" text="Cliente Jurídico" />
-                              <TreeTableColumn prefWidth="126.27693176269531" text="Cliente Físico" />
-                              <TreeTableColumn minWidth="7.0" prefWidth="75.38027954101562" text="Veículo" />
-                              <TreeTableColumn prefWidth="94.17367553710938" text="Companhia" />
-                              <TreeTableColumn prefWidth="66.82638549804688" text="Bônus" />
-                              <TreeTableColumn prefWidth="58.7340087890625" text="Sinistro" />
-                              <TreeTableColumn prefWidth="41.538330078125" text="Ativo" />
-                              <TreeTableColumn prefWidth="124.43511962890625" text="Data Inicio" />
-                              <TreeTableColumn prefWidth="124.02191162109375" text="Data Fim" />
+                            <TreeTableColumn fx:id="colIdSeguro" prefWidth="51.0" text="ID" />
+                            <TreeTableColumn fx:id="colIdJuridico" prefWidth="116.79342651367188" text="Cliente Jurídico" />
+                              <TreeTableColumn fx:id="colIdFisico" prefWidth="126.27693176269531" text="Cliente Físico" />
+                              <TreeTableColumn fx:id="colIdVeiculo" minWidth="7.0" prefWidth="75.38027954101562" text="Veículo" />
+                              <TreeTableColumn fx:id="colCompanhia" prefWidth="94.17367553710938" text="Companhia" />
+                              <TreeTableColumn fx:id="colBonus" prefWidth="66.82638549804688" text="Bônus" />
+                              <TreeTableColumn fx:id="colSinistro" prefWidth="58.7340087890625" text="Sinistro" />
+                              <TreeTableColumn fx:id="colAtivo" prefWidth="41.538330078125" text="Ativo" />
+                              <TreeTableColumn fx:id="colDataInicio" prefWidth="124.43511962890625" text="Data Inicio" />
+                              <TreeTableColumn fx:id="colDataFim" prefWidth="124.02191162109375" text="Data Fim" />
                           </columns>
                         </TreeTableView>
                         <Button fx:id="btnPesquisar" layoutX="725.0" layoutY="82.0" mnemonicParsing="false" text="Pesquisar" />
@@ -241,7 +241,7 @@
                                        <children>
                                           <Label layoutX="20.0" layoutY="126.0" text="Funcionário" />
                                           <ComboBox fx:id="cbRelatorioPorFuncionario" layoutX="101.0" layoutY="121.0" prefHeight="27.0" prefWidth="467.0" />
-                                          <Button fx:id="cbGerarPorFuncionario" layoutX="582.0" layoutY="121.0" mnemonicParsing="false" text="Gerar" />
+                                          <Button fx:id="btnGerarPorFuncionario" layoutX="581.0" layoutY="121.0" mnemonicParsing="false" text="Gerar" />
                                           <Label layoutX="421.0" layoutY="260.0" text="Todos os Funcionários" />
                                           <Button fx:id="btnGerarTodosFuncionarios" layoutX="577.0" layoutY="255.0" mnemonicParsing="false" text="Gerar" />
                                           <Text layoutX="260.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vendas por Funcionário" />
