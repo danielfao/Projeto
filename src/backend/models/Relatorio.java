@@ -1,15 +1,15 @@
 package backend.models;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.text.DecimalFormat;
-import java.util.List;
+//import java.io.BufferedWriter;
+//import java.io.FileWriter;
+//import java.io.IOException;
+//import java.io.Writer;
+//import java.text.DecimalFormat;
+//import java.util.List;
 
 /** Class Relatorio related to create reports.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  */
 public class Relatorio {

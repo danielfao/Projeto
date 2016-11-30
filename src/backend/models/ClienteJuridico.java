@@ -3,7 +3,7 @@ package backend.models;
 /** Class ClienteJuridico.
  *  Contains attributes to create a legal customer/client.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  * 
  */
 public class ClienteJuridico {
@@ -239,7 +239,7 @@ public class ClienteJuridico {
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
-	@Override
+	/*@Override
 	public String toString(){
 		String compl = getComplemento();
 		if (compl == null){
@@ -252,7 +252,7 @@ public class ClienteJuridico {
 		getRua() + ", " + getNumero() + "\nComplemento: " + getComplemento() + "\nBairro: " + getBairro() + "\nCEP: " + getCep() + 
 		"\nCidade: " + getCidade() + "\nEstado: " + getEstado() + "\n";	
 	}
-	
+	*/
 	/** Method responsible to register a regular client.
 	 * 	Print if a client was register with success or not.
 	 * 

@@ -2,7 +2,7 @@ package backend.models;
 
 /** Class Usuario related to create an user extended from Pessoa.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  */
 public class Usuario extends Pessoa{
@@ -103,7 +103,7 @@ public class Usuario extends Pessoa{
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
-	@Override
+	/*@Override
 	public String toString(){
 		String compl = getComplemento();
 		if (compl == null){
@@ -115,7 +115,7 @@ public class Usuario extends Pessoa{
 		return "Nome: " + getNome() + "\nCPF: " + getCpf() + "\nData de Nascimento: " + getDataNascimento() + "\nTelefone: " +
 		getTelefone() + "\nEndereco: " + getRua() + ", " + getNumero() + "\nComplemento: " + compl + "\nBairro: " + getBairro() + 
 		"\nCEP: " + getCep() + "\nCidade: " + getCidade() + "\nEstado: " + getEstado() + "\nLogin: " + getLogin() + "\n";		
-	}
+	}*/
 	
 	/** Method responsible to register a user.
 	 * 	Print if an user was register with success or not.

@@ -1,18 +1,22 @@
 package backend.models;
 
 import java.io.IOException;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /** Class ClienteFisico that extends from Pessoa.
  *  Contains extra attributes to create a regular client.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  * 
  */
 
 public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
+	
+	public ClienteFisico(){
+		
+	}
 	
 	/** Constructor method with complemento attribute.
 	 * 
@@ -97,7 +101,7 @@ public class ClienteFisico extends Pessoa {
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
-	@Override
+	/*@Override
 	public String toString(){
 		String compl = getComplemento();
 		if (compl == null){
@@ -111,7 +115,7 @@ public class ClienteFisico extends Pessoa {
 			getTelefone() + "\nProfissao: " + this.profissao + "\nEstado Civil: " + this.estadoCivil + "\nEndereco: " + 
 			getRua() + ", " + getNumero() + "\nComplemento: " + compl + "\nBairro: " + getBairro() + "\nCEP: " + getCep() + "\nCidade: " +
 			getCidade() + "\nEstado: " + getEstado() + "\n";		
-	}
+	}*/
 	
 	/** Method that overrides the output of this class depending if it's using the constructor with complemento or without.
 	 * 
@@ -155,7 +159,6 @@ public class ClienteFisico extends Pessoa {
 		this.setCidade(ler.nextLine());
 		System.out.println("Estado: ");
 		this.setEstado(ler.nextLine());*/
-		
 		System.out.println("Cliente cadastrado com sucesso!\n");
 	}
 }

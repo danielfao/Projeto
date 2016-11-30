@@ -1,10 +1,10 @@
 package backend.models;
 
-import java.text.DecimalFormat;
+//import java.text.DecimalFormat;
 
 /** Class Venda related to create a sell.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  */
 public class Venda {

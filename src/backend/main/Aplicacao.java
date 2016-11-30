@@ -1,6 +1,6 @@
 package backend.main;
 
-import java.io.IOException;
+/*import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import backend.models.ClienteFisico;
@@ -8,18 +8,18 @@ import backend.models.ClienteJuridico;
 import backend.models.Seguro;
 import backend.models.Usuario;
 import backend.models.Veiculo;
-import backend.models.Venda;
+import backend.models.Venda;*/
 
 /** Main class responsible for call all methods and create the objects
  * this class will be refactored.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  * @version 1.0
  */
 public class Aplicacao {
 
-	public static void main(String[] args) throws IOException {
+	/*public static void main(String[] args) throws IOException {
 		List<Venda> vendas = new ArrayList<Venda>();
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 		List<Seguro> seguros = new ArrayList<>();
@@ -73,14 +73,14 @@ public class Aplicacao {
 		
 		seguro1.cancelarSeguro("01/05/2016");
 		
-		/*Relatorio relatorio = new Relatorio();
+		Relatorio relatorio = new Relatorio();
 		relatorio.gerarVendasPorFuncionario(usuario1, vendas);
 		relatorio.gerarVendasPorFuncionario(usuario2, vendas);
 		relatorio.gerarVendasPorFuncionario(usuario3, vendas);
 		relatorio.gerarVendasTodosFuncionarios(usuarios, vendas);
 		relatorio.gerarSegurosAtivosPorClienteFisico(clienteF1, vendas);
 		relatorio.gerarSegurosAtivosPorClienteJuridico(clienteJ1, vendas);
-		relatorio.gerarSegurosInativos(seguros);*/
-	}
+		relatorio.gerarSegurosInativos(seguros);
+	}*/
 
 }

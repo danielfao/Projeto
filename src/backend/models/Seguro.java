@@ -1,18 +1,15 @@
 package backend.models;
 
-import backend.interfaces.IAlteraSeguro;
+//import backend.interfaces.IAlteraSeguro;
 
 /** Class Seguro related to create a car insurance that implements the methods 
  * from the interface IAlteraSeguro
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  */
-public class Seguro implements IAlteraSeguro{
+public class Seguro /*implements IAlteraSeguro*/{
 	private int id, bonus;
-	private ClienteFisico pessoa;
-	private ClienteJuridico empresa;
-	private Veiculo veiculoSeguro;
 	private String inicioVigencia, finalVigencia;
 	private String companhia;
 	private boolean sinistro=false;
@@ -25,6 +22,7 @@ public class Seguro implements IAlteraSeguro{
 	public Seguro(){
 		
 	}
+	
 	/** Constructor method that calls a object ClienteFisico.
 	 * 
 	 * @param pessoa
@@ -34,9 +32,9 @@ public class Seguro implements IAlteraSeguro{
 	 * @param fim
 	 * @param companhia
 	 */
-	public Seguro(ClienteFisico pessoa, Veiculo veiculo, int bonus, String inicio, String fim, String companhia){
-		this.pessoa = pessoa;
-		this.veiculoSeguro = veiculo;
+	public Seguro(int idPessoa, int idVeiculo, int bonus, String inicio, String fim, String companhia){
+		this.idPessoa = idPessoa;
+		this.idVeiculoSeguro = idVeiculo;
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
 		this.finalVigencia = fim;
@@ -53,15 +51,15 @@ public class Seguro implements IAlteraSeguro{
 	 * @param fim
 	 * @param companhia
 	 */
-	public Seguro(ClienteJuridico empresa, Veiculo veiculo, int bonus, String inicio, String fim, String companhia){
-		this.empresa = empresa;
-		this.veiculoSeguro = veiculo;
+	/*public Seguro(int idEmpresa, int idVeiculo, int bonus, String inicio, String fim, String companhia){
+		this.idEmpresa = idEmpresa;
+		this.idVeiculoSeguro = idVeiculo;
 		this.bonus = bonus;
 		this.inicioVigencia = inicio;
 		this.finalVigencia = fim;
 		this.companhia = companhia;
 		cadastrarSeguro();
-	}
+	}*/
 	
 	/** Getter method related to instance of the attribute.
 	 * 
@@ -106,8 +104,8 @@ public class Seguro implements IAlteraSeguro{
 	 * 
 	 * @param pessoa
 	 */
-	public void setPessoa(ClienteFisico pessoa) {
-		this.idPessoa = pessoa.getId();
+	public void setPessoa(int pessoa) {
+		this.idPessoa = pessoa;
 	}
 	
 	/** Getter method related to instance of the attribute.
@@ -122,8 +120,8 @@ public class Seguro implements IAlteraSeguro{
 	 * 
 	 * @param empresa
 	 */
-	public void setEmpresa(ClienteJuridico empresa) {
-		this.idEmpresa = empresa.getId();
+	public void setEmpresa(int empresa) {
+		this.idEmpresa = empresa;
 	}
 	
 	/** Getter method related to instance of the attribute.
@@ -138,8 +136,8 @@ public class Seguro implements IAlteraSeguro{
 	 * 
 	 * @param veiculoSeguro
 	 */
-	public void setVeiculoSeguro(Veiculo veiculo1) {
-		this.idVeiculoSeguro = veiculo1.getIdVeiculo();
+	public void setVeiculoSeguro(int veiculo) {
+		this.idVeiculoSeguro = veiculo;
 	}
 	
 	/** Getter method related to instance of the attribute.
@@ -231,7 +229,7 @@ public class Seguro implements IAlteraSeguro{
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
-	@Override
+	/*@Override
 	public void terSinistro(){
 		if(pessoa != null){
 			if (this.sinistro == true){ //Ja tem sinistro nesse seguro
@@ -258,13 +256,13 @@ public class Seguro implements IAlteraSeguro{
 						+ "\n");
 			}
 		}
-	}
+	}*/
 		
 	/** Method responsible for cancel the insurance.
 	 * 
 	 * @param data
 	 */
-	@Override
+	/*@Override
 	public void cancelarSeguro (String data){ //Data de cancelamento
 		if (this.ativo == false){ 
 			System.out.println("O seguro ja encontra-se cancelado!\n");
@@ -274,13 +272,13 @@ public class Seguro implements IAlteraSeguro{
 			this.finalVigencia = data;
 			System.out.println("O seguro foi cancelado!\n");
 		}
-	}
+	}*/
 	
 	/** Method responsible for calculate the bonus based if the client already had a car accident or not.
 	 * if the client already had a car accident it will decrease the bonus -1, if not it will increase +1.
 	 * 
 	 */
-	@Override
+	/*@Override
 	public void calcularBonus(){
 		if(this.sinistro == true){ //Se o seguro teve sinistro, bonus diminui em 1
 			this.bonus = this.bonus - 1;
@@ -288,21 +286,21 @@ public class Seguro implements IAlteraSeguro{
 		else{ // Se nao teve, bonus aumenta 1
 			this.bonus = this.bonus + 1;
 		}
-	}
+	}*/
 	
 	/** Method responsible for transfer the insurance to another vehicle.
 	 * 
 	 */
-	@Override
+	/*@Override
 	public void realizarEndosso(Veiculo veiculo){
 		this.veiculoSeguro = veiculo;
-	}
+	}*/
 	
 	/** Method that overrides the output of this class.
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
-	@Override
+	/*@Override
 	public String toString(){
 		//if(getPessoa()!= null){
 			return "Cliente: " + pessoa.getNome() + "\nSeguro do veiculo " + veiculoSeguro.getModelo() + " " + 

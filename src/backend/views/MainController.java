@@ -1,14 +1,21 @@
 package backend.views;
 
-import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
+import backend.dao.ClienteFisicoDAO;
 import backend.dao.SeguroDAO;
 import backend.models.ClienteFisico;
 import backend.models.Seguro;
 import backend.models.Veiculo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -16,9 +23,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableColumn;
-import javafx.stage.Popup;
 
-public class MainController {
+public class MainController implements Initializable{
 
 	@FXML
 	private Tab tabCadastrar;
@@ -51,7 +57,7 @@ public class MainController {
 	private TextField tfCidadeFuncionario;
 
 	@FXML
-	private ComboBox<?> cbEstadoFuncionario;
+	private ComboBox<String> cbEstadoFuncionario;
 
 	@FXML
 	private TextField tfCepFuncionario;
@@ -96,7 +102,7 @@ public class MainController {
 	private TextField tfCidadeClienteFisico;
 
 	@FXML
-	private ComboBox<?> cbEstadoClienteFisico;
+	private ComboBox<String> cbEstadoClienteFisico;
 
 	@FXML
 	private TextField tfCepClienteFisico;
@@ -138,7 +144,7 @@ public class MainController {
 	private TextField tfCidadeClienteJuridico;
 
 	@FXML
-	private ComboBox<?> cbEstadoClienteJuridico;
+	private ComboBox<String> cbEstadoClienteJuridico;
 
 	@FXML
 	private TextField tfCepClienteJuridico;
@@ -150,7 +156,7 @@ public class MainController {
 	private Button btnCancelarClienteJuridico;
 
 	@FXML
-	private ComboBox<?> cbClienteVeiculo;
+	private ComboBox<String> cbClienteVeiculo;
 
 	@FXML
 	private TextField tfCModelo;
@@ -178,15 +184,6 @@ public class MainController {
 	
 	@FXML
 	private ComboBox<String> cbClienteSeguro;
-	
-	private void popularCB(List<ClienteFisico> clientes){
-		this.cbClienteSeguro.getItems().clear();
-		
-		for (ClienteFisico tmpCliente : clientes){
-			this.cbClienteSeguro.getItems().add(tmpCliente.getNome());
-		}
-		
-	}
 
 	@FXML
 	private ComboBox<?> cbVeiculoSeguro;
@@ -292,6 +289,50 @@ public class MainController {
 
 	@FXML
 	private Button btnGeraClienteInativo;
+	
+	@FXML
+    void cadastrarClienteFisico(ActionEvent event) {
+		ClienteFisico cliente = new ClienteFisico();
+		
+		try{
+			cliente.setNome(this.tfNomeClienteFisico.getText());
+			cliente.setCpf(this.tfCpfClienteFisico.getText());
+			cliente.setDataNascimento(this.dpDataNClienteFisico.getEditor().getText());
+			cliente.setRua(this.tfEnderecoClienteFisico.getText());
+			cliente.setNumero(Integer.parseInt(this.tfNumeroClienteFisico.getText()));
+			cliente.setBairro(this.tfBairroClienteFisico.getText());
+			cliente.setCep(this.tfCepClienteFisico.getText());
+			cliente.setCidade(this.tfCidadeClienteFisico.getText());
+			cliente.setEstado(this.cbEstadoClienteFisico.getEditor().getText());
+			cliente.setComplemento(this.tfComplementoClienteFisico.getText());
+			cliente.setEstadoCivil(this.tfEstadoCivelClienteFisico.getText());
+			cliente.setProfissao(this.tfProfissaoClienteFisico.getText());
+			cliente.setTelefone(this.tfTelefoneClienteFisico.getText());
+			
+			ClienteFisicoDAO cliDAO = new ClienteFisicoDAO();
+			try{
+				if(cliDAO.inserir(cliente)){
+					tfNomeClienteFisico.clear();
+					tfCpfClienteFisico.clear();
+					dpDataNClienteFisico.getEditor().clear();
+					tfEnderecoClienteFisico.clear();
+					tfNumeroClienteFisico.clear();
+					tfBairroClienteFisico.clear();
+					tfCepClienteFisico.clear();
+					tfCidadeClienteFisico.clear();
+					tfComplementoClienteFisico.clear();
+					tfEstadoCivelClienteFisico.clear();
+					tfProfissaoClienteFisico.clear();
+					tfTelefoneClienteFisico.clear();
+					JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+				}
+			} catch (Exception ex){
+				JOptionPane.showMessageDialog(null, "Favor preencher todos os campos corretamente!");
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+    }
 
 	@FXML
 	void cadastrarFuncionario(ActionEvent event) {
@@ -299,37 +340,35 @@ public class MainController {
 	}
 
 	@FXML
-	void cadastrarSeguro(ActionEvent event) throws IOException {
-		//OBS: Coloquei o CRUD aqui apenas para exemplificar - porém cada um é pra uma função específica.
-
-		//descobrir como buscar as informações vindas do formulário para preencher o construtor.
+	void cadastrarSeguro(ActionEvent event){
 		Seguro seguro = new Seguro();
 		//seguro.setPessoa(this.cbClienteSeguro.getValue());
 		//seguro.setVeiculoSeguro(this.cbVeiculoSeguro.getValue());
-		seguro.setInicioVigencia(String.valueOf(this.dpInicioVigenciaSeguro.getValue()));
-		seguro.setFinalVigencia(String.valueOf(this.dpFimVigenciaSeguro.getValue()));
-		seguro.setCompanhia(this.tfCompanhiaSeguro.getText());
-		seguro.setBonus(Integer.parseInt(this.tfBonusSeguro.getText()));
-		ClienteFisico clienteF1 = new ClienteFisico("Gilberto Silva", "12345678912", "09/10/1990", "(16)33311111", "Av Sao Carlos", 1245, "Centro", "12345-567", "Sao Carlos" , "SP", "Vendedor", "Casado");
-		seguro.setPessoa(clienteF1);
-		Veiculo veiculo1 = new Veiculo("Celta 1.0", "9BHCG134JVH", "DNH-1213", 2012, 2012, 864829018, clienteF1);
-		seguro.setVeiculoSeguro(veiculo1);
-		//seguro.setInicioVigencia("2016-08-20");
-		//seguro.setFinalVigencia("2017-08-20");
-		//seguro.setCompanhia("Porto Seguro");
-		//seguro.setBonus(0);
-		SeguroDAO segDAO = new SeguroDAO();
-		if(segDAO.inserir(seguro)){
-			dpInicioVigenciaSeguro.getEditor().clear();
-			dpFimVigenciaSeguro.getEditor().clear();
-			tfCompanhiaSeguro.clear();
-			tfBonusSeguro.clear();
+		try{
+			seguro.setInicioVigencia(String.valueOf(this.dpInicioVigenciaSeguro.getValue()));
+			seguro.setFinalVigencia(String.valueOf(this.dpFimVigenciaSeguro.getValue()));
+			seguro.setCompanhia(this.tfCompanhiaSeguro.getText());
+			seguro.setBonus(Integer.parseInt(this.tfBonusSeguro.getText()));
+			ClienteFisico clienteF1 = new ClienteFisico("Gilberto Silva", "12345678912", "09/10/1990", "(16)33311111", "Av Sao Carlos", 1245, "Centro", "12345-567", "Sao Carlos" , "SP", "Vendedor", "Casado");
+			seguro.setPessoa(clienteF1.getId());
+			Veiculo veiculo1 = new Veiculo("Celta 1.0", "9BHCG134JVH", "DNH-1213", 2012, 2012, 864829018, clienteF1);
+			seguro.setVeiculoSeguro(veiculo1.getIdVeiculo());
+			SeguroDAO segDAO = new SeguroDAO();
+			try{
+				if(segDAO.inserir(seguro)){
+					dpInicioVigenciaSeguro.getEditor().clear();
+					dpFimVigenciaSeguro.getEditor().clear();
+					tfCompanhiaSeguro.clear();
+					tfBonusSeguro.clear();
+					JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+				}
+			}catch (Exception ex){
+				JOptionPane.showMessageDialog(null, "N�o foi possivel realizar o cadastro!");
+			}
 		}
-		else{
-			Popup error = new Popup();
-			error.show(error);
+		catch (Exception e){
+			JOptionPane.showMessageDialog(null, "Favor preencher todos os campos corretamente!");
 		}
-
 	}
 
 	@FXML
@@ -344,16 +383,69 @@ public class MainController {
 
 	@FXML
 	void pesquisar(ActionEvent event) throws SQLException {
-		//Tentar entender o porque dos erros
-		Seguro seguro = new Seguro();
+
+	}
+	
+	@FXML
+    void cancelarSeguro(ActionEvent event) {
+		dpInicioVigenciaSeguro.getEditor().clear();
+		dpFimVigenciaSeguro.getEditor().clear();
+		tfCompanhiaSeguro.clear();
+		tfBonusSeguro.clear();
+    }
+	
+	@FXML
+    void filtrarSeguro(ActionEvent event) {
 		SeguroDAO segDAO = new SeguroDAO();
 
-		List<Seguro> seguros = segDAO.pesquisar(seguro);
-		for (Seguro seg : seguros) {
-			System.out.println(seg.getBonus() + "Bonus: " + seg.getCompanhia() + "Companhia: " + seg.getVeiculoSeguro() + "Veiculo: "
-					+ seg.getInicioVigencia() + " Inicio Vigencia: " + seg.getFinalVigencia() + "Final Vigencia: " + seg.getEmpresa() 
-					+ "Cliente Juridico : " + seg.getPessoa() + "Cliente Fisico: "); 
+		List<Seguro> seguros;
+		try {
+			seguros = segDAO.pesquisar();
+			for (Seguro seg : seguros) {
+				System.out.println("Bonus: " + seg.getBonus() + " Companhia: " + seg.getCompanhia() + " Veiculo: " + seg.getVeiculoSeguro() + 
+						" Inicio Vigencia: " + seg.getInicioVigencia() + " Final Vigencia: " + seg.getFinalVigencia() + "Cliente: " + seg.getPessoa()); 
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		
+    }
+	
+	 @FXML
+	 void limparCampoPesquisa(ActionEvent event) {
+		 tfPesquisa.clear();
+	 }
+	 
+	 private void popularCBCliente(List<ClienteFisico> clientes){
+			this.cbClienteSeguro.getItems().clear();
+			this.cbClienteVeiculo.getItems().clear();
+			for (ClienteFisico tmpCliente : clientes){
+				this.cbClienteSeguro.getItems().add(tmpCliente.getNome());
+				this.cbClienteSeguro.getItems().add(tmpCliente.getNome());
+			}
+			
+	}
+	 
+	private void popularCBEstados(){
+			this.cbEstadoClienteFisico.getItems().clear();
+			this.cbEstadoClienteJuridico.getItems().clear();
+			this.cbEstadoFuncionario.getItems().clear();
+			this.cbEstadoClienteFisico.getItems().addAll("AC", "AL", "AP", "BA");
+			this.cbEstadoClienteJuridico.getItems().addAll("AC", "AL", "AP", "BA");
+			this.cbEstadoFuncionario.getItems().addAll("AC", "AL", "AP", "BA");
+	}
+	 
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ClienteFisicoDAO cliDAO = new ClienteFisicoDAO();
+		List<ClienteFisico> clientes;
+		try {
+			clientes = cliDAO.pesquisar();
+			popularCBCliente(clientes);
+			popularCBEstados();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

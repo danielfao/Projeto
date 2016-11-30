@@ -2,11 +2,11 @@ package backend.models;
 
 /** Class Veiculo related to create a vehicle.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  */
 public class Veiculo {
-	private int idVeiculo=1;
+	private int idVeiculo=2;
 	private String modelo;
 	private String chassi;
 	private String placa;
@@ -203,13 +203,12 @@ public class Veiculo {
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
-	@Override
+	/*@Override
 	public String toString(){
 		return "Modelo: " + this.modelo + "\nChassi: " + this.chassi + "\nPlaca: " + this.placa + "\nAno de fabricacao: " +
 				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam + "\n";
 				
-	}
-	
+	}*/
 	/** Method responsible to register a vehicle.
 	 * 	Print if an vehicle was register with success or not.
 	 * 

@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="backend.views.MainController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="backend.views.MainController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -100,7 +100,7 @@
                                           <TextField fx:id="tfProfissaoClienteFisico" layoutX="73.0" layoutY="257.0" prefHeight="27.0" prefWidth="228.0" />
                                           <Label layoutX="511.0" layoutY="265.0" text="Estado Civil" />
                                           <TextField fx:id="tfEstadoCivelClienteFisico" layoutX="597.0" layoutY="260.0" prefHeight="27.0" prefWidth="286.0" />
-                                          <Button fx:id="btnCadastrarClienteFisico" layoutX="702.0" layoutY="309.0" mnemonicParsing="false" text="Cadastrar" />
+                                          <Button fx:id="btnCadastrarClienteFisico" layoutX="702.0" layoutY="309.0" mnemonicParsing="false" onAction="#cadastrarClienteFisico" text="Cadastrar" />
                                           <Button fx:id="btnCancelarClienteFisico" layoutX="795.0" layoutY="309.0" mnemonicParsing="false" text="Cancelar" />
                                        </children>
                                 </AnchorPane>
@@ -175,7 +175,7 @@
                                           <Label layoutX="14.0" layoutY="144.0" text="Companhia" />
                                           <TextField fx:id="tfCompanhiaSeguro" layoutX="14.0" layoutY="178.0" prefHeight="27.0" prefWidth="388.0" />
                                           <Button fx:id="btnCadastrarSeguro" layoutX="649.0" layoutY="250.0" mnemonicParsing="false" onAction="#cadastrarSeguro" text="Cadastrar" />
-                                          <Button fx:id="btnCancelarSeguro" layoutX="752.0" layoutY="250.0" mnemonicParsing="false" text="Cancelar" />
+                                          <Button fx:id="btnCancelarSeguro" layoutX="752.0" layoutY="250.0" mnemonicParsing="false" onAction="#cancelarSeguro" text="Limpar" />
                                        </children>
                                     </AnchorPane>
                                 </content>
@@ -213,19 +213,18 @@
                         <TreeTableView layoutX="12.0" layoutY="139.0" prefHeight="481.0" prefWidth="880.0">
                           <columns>
                             <TreeTableColumn fx:id="colIdSeguro" prefWidth="51.0" text="ID" />
-                            <TreeTableColumn fx:id="colIdJuridico" prefWidth="116.79342651367188" text="Cliente Jurídico" />
-                              <TreeTableColumn fx:id="colIdFisico" prefWidth="126.27693176269531" text="Cliente Físico" />
-                              <TreeTableColumn fx:id="colIdVeiculo" minWidth="7.0" prefWidth="75.38027954101562" text="Veículo" />
-                              <TreeTableColumn fx:id="colCompanhia" prefWidth="94.17367553710938" text="Companhia" />
-                              <TreeTableColumn fx:id="colBonus" prefWidth="66.82638549804688" text="Bônus" />
-                              <TreeTableColumn fx:id="colSinistro" prefWidth="58.7340087890625" text="Sinistro" />
-                              <TreeTableColumn fx:id="colAtivo" prefWidth="41.538330078125" text="Ativo" />
-                              <TreeTableColumn fx:id="colDataInicio" prefWidth="124.43511962890625" text="Data Inicio" />
-                              <TreeTableColumn fx:id="colDataFim" prefWidth="124.02191162109375" text="Data Fim" />
+                              <TreeTableColumn fx:id="colIdFisico" prefWidth="139.0" text="Cliente Físico" />
+                              <TreeTableColumn fx:id="colIdVeiculo" minWidth="7.0" prefWidth="88.0" text="Veículo" />
+                              <TreeTableColumn fx:id="colCompanhia" prefWidth="98.0" text="Companhia" />
+                              <TreeTableColumn fx:id="colBonus" prefWidth="71.0" text="Bônus" />
+                              <TreeTableColumn fx:id="colSinistro" prefWidth="87.0" text="Sinistro" />
+                              <TreeTableColumn fx:id="colAtivo" text="Ativo" />
+                              <TreeTableColumn fx:id="colDataInicio" prefWidth="121.0" text="Data Inicio" />
+                              <TreeTableColumn fx:id="colDataFim" prefWidth="143.0" text="Data Fim" />
                           </columns>
                         </TreeTableView>
-                        <Button fx:id="btnPesquisar" layoutX="725.0" layoutY="82.0" mnemonicParsing="false" text="Pesquisar" />
-                        <Button fx:id="btnLimparPesquisa" layoutX="814.0" layoutY="82.0" mnemonicParsing="false" text="Limpar" />
+                        <Button fx:id="btnPesquisar" layoutX="725.0" layoutY="82.0" mnemonicParsing="false" onAction="#filtrarSeguro" text="Pesquisar" />
+                        <Button fx:id="btnLimparPesquisa" layoutX="814.0" layoutY="82.0" mnemonicParsing="false" onAction="#limparCampoPesquisa" text="Limpar" />
                      </children></AnchorPane>
             </content>
           </Tab>

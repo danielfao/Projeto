@@ -9,7 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+	
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		Pane tmpRoot = FXMLLoader.load(getClass().getResource("/backend/views/Main.fxml"));
@@ -18,14 +18,9 @@ public class Main extends Application {
 		primaryStage.setScene(tmpScene);
 		primaryStage.show();
 	}
-
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
-	/*
-	String estados [] = {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", 
-			"RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"};
-	*/
-			
+				
 }

@@ -2,22 +2,26 @@ package backend.models;
 
 /** Class Pessoa related to creates a person attributes. It's a father class of ClienteFisico and Usuario.
  * 
- * @author Daniel Oliveira / Maisa Rissi
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
  *
  */
 public abstract class Pessoa {
-	private int id=2;
-	private String nome = "";
-	private String cpf = "";
-	private String dataNascimento = "";
-	private String telefone = "";
-	private String rua = "";
-	private int numero = 0;
-	private String complemento = "";
-	private String bairro = "";
-	private String cep = "";
-	private String cidade = "";
-	private String estado = "";
+	private int id;
+	private String nome;
+	private String cpf;
+	private String dataNascimento;
+	private String telefone;
+	private String rua;
+	private int numero;
+	private String complemento;
+	private String bairro;
+	private String cep;
+	private String cidade;
+	private String estado;
+	
+	public Pessoa(){
+		
+	}
 	
 	/** Constructor method without complemento attribute.
 	 * 
