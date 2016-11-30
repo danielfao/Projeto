@@ -312,6 +312,8 @@ public class MainController implements Initializable{
 			ClienteFisicoDAO cliDAO = new ClienteFisicoDAO();
 			try{
 				if(cliDAO.inserir(cliente)){
+					this.cbClienteSeguro.getItems().add(cliente.getNome());
+					this.cbClienteVeiculo.getItems().add(cliente.getNome());
 					tfNomeClienteFisico.clear();
 					tfCpfClienteFisico.clear();
 					dpDataNClienteFisico.getEditor().clear();
@@ -325,6 +327,7 @@ public class MainController implements Initializable{
 					tfProfissaoClienteFisico.clear();
 					tfTelefoneClienteFisico.clear();
 					JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+					
 				}
 			} catch (Exception ex){
 				JOptionPane.showMessageDialog(null, "Favor preencher todos os campos corretamente!");
@@ -421,7 +424,7 @@ public class MainController implements Initializable{
 			this.cbClienteVeiculo.getItems().clear();
 			for (ClienteFisico tmpCliente : clientes){
 				this.cbClienteSeguro.getItems().add(tmpCliente.getNome());
-				this.cbClienteSeguro.getItems().add(tmpCliente.getNome());
+				this.cbClienteVeiculo.getItems().add(tmpCliente.getNome());
 			}
 			
 	}
