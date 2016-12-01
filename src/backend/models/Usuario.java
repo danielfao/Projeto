@@ -55,6 +55,10 @@ public class Usuario extends Pessoa{
 		cadastrarUsuario();
 	}
 	
+	public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/** Setter method related to instance of the attribute
 	 * 
 	 * @param login

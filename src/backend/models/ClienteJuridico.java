@@ -71,6 +71,10 @@ public class ClienteJuridico {
 		cadastrarClienteJuridico();
 	}
 	
+	public ClienteJuridico() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}

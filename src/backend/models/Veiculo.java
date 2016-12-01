@@ -10,11 +10,10 @@ public class Veiculo {
 	private String modelo;
 	private String chassi;
 	private String placa;
-	private int anoFabricacao;
-	private int anoModelo;
+	private String anoFabricacao;
+	private String anoModelo;
 	private long renavam;
-	private ClienteFisico clienteFisico;
-	private ClienteJuridico clienteJuridico;
+	private int idPessoa;
 	
 	/** Constructor method that calls a object ClienteFisico.
 	 * 
@@ -26,38 +25,21 @@ public class Veiculo {
 	 * @param renavam
 	 * @param cliente
 	 */
-	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteFisico cliente) {
+	public Veiculo(String modelo, String chassi, String placa, String anoFabricacao, String anoModelo, long renavam, int idPessoa) {
 		this.modelo = modelo;
 		this.chassi = chassi;
 		this.placa = placa;
 		this.anoFabricacao = anoFabricacao;
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
-		this.clienteFisico = cliente;
+		this.idPessoa = idPessoa;
 		cadastrarVeiculo();
 	}
 	
-	/** Constructor method that calls a object ClienteJuridico.
-	 * 
-	 * @param modelo
-	 * @param chassi
-	 * @param placa
-	 * @param anoFabricacao
-	 * @param anoModelo
-	 * @param renavam
-	 * @param cliente
-	 */
-	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteJuridico cliente) {
-		this.modelo = modelo;
-		this.chassi = chassi;
-		this.placa = placa;
-		this.anoFabricacao = anoFabricacao;
-		this.anoModelo = anoModelo;
-		this.renavam = renavam;
-		this.clienteJuridico = cliente;
-		cadastrarVeiculo();
+	public Veiculo() {
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	/** Getter method related to instance of the attribute.
 	 * 
 	 * @return idVeiculo
@@ -118,7 +100,7 @@ public class Veiculo {
 	 * 
 	 * @return anoFabricacao
 	 */
-	public int getAnoFabricacao() {
+	public String getAnoFabricacao() {
 		return anoFabricacao;
 	}
 
@@ -126,7 +108,7 @@ public class Veiculo {
 	 * 
 	 * @param anoFabricacao
 	 */
-	public void setAnoFabricacao(int anoFabricacao) {
+	public void setAnoFabricacao(String anoFabricacao) {
 		this.anoFabricacao = anoFabricacao;
 	}
 
@@ -134,7 +116,7 @@ public class Veiculo {
 	 * 
 	 * @return anoModelo
 	 */
-	public int getAnoModelo() {
+	public String getAnoModelo() {
 		return anoModelo;
 	}
 
@@ -143,8 +125,8 @@ public class Veiculo {
 	 * 
 	 * @param anoModelo
 	 */
-	public void setAnoModelo(int anoModelo) {
-		if(anoModelo >= anoFabricacao)
+	public void setAnoModelo(String anoModelo) {
+		if(anoModelo != anoFabricacao)
 			this.anoModelo = anoModelo;
 		else
 			System.out.println("Ano modelo nao pode ser menor que ano de fabricacao");
@@ -166,49 +148,14 @@ public class Veiculo {
 		this.renavam = renavam;
 	}
 	
-	/** Getter method related to instance of the attribute
-	 * 
-	 * @return clienteFisico
-	 */
-	public ClienteFisico getClienteFisico() {
-		return clienteFisico;
+	public int getPessoa() {
+		return idPessoa;
 	}
 
-	/** Setter method related to instance of the attribute
-	 * 
-	 * @param clienteFisico
-	 */
-	public void setClienteFisico(ClienteFisico clienteFisico) {
-		this.clienteFisico = clienteFisico;
+	public void setPessoa(int idPessoa) {
+		this.idPessoa = idPessoa;
 	}
 
-	/** Getter method related to instance of the attribute
-	 * 
-	 * @return clienteJuridico
-	 */
-	public ClienteJuridico getClienteJuridico() {
-		return clienteJuridico;
-	}
-
-	/** Setter method related to instance of the attribute
-	 * 
-	 * @param clienteJuridico
-	 */
-	public void setClienteJuridico(ClienteJuridico clienteJuridico) {
-		this.clienteJuridico = clienteJuridico;
-	}
-
-	
-	 /** Method that overrides the output of this class.
-	 * 
-	 * @return String all attributes in a easy way to read using the console/terminal
-	 */
-	/*@Override
-	public String toString(){
-		return "Modelo: " + this.modelo + "\nChassi: " + this.chassi + "\nPlaca: " + this.placa + "\nAno de fabricacao: " +
-				+ this.anoFabricacao + "\nAno modelo: " + this.anoModelo + "\nRenavam: " + this.renavam + "\n";
-				
-	}*/
 	/** Method responsible to register a vehicle.
 	 * 	Print if an vehicle was register with success or not.
 	 * 

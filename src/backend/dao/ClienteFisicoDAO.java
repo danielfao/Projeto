@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import backend.models.ClienteFisico;
-import backend.models.Seguro;
 
 public class ClienteFisicoDAO {
 	private Connection connection;

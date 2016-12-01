@@ -10,7 +10,7 @@ public class ConnectionFactory {
 	public static Connection getConnection(){
 		try{
 			return
-					DriverManager.getConnection("jdbc:sqlite:/Users/Windows 8/Documents/GitHub/SIGCor/bd/SIGCor.db");
+					DriverManager.getConnection("jdbc:sqlite:bd/SIGCor.db");
 
 		}catch (SQLException e){
 			throw new RuntimeException(e);
