@@ -1,10 +1,18 @@
 package backend.models;
 
+<<<<<<< HEAD
 import java.text.DecimalFormat;
 
 /** Class Venda related to create a sell.
  * 
  * @author Daniel Oliveira / Maisa Rissi
+=======
+//import java.text.DecimalFormat;
+
+/** Class Venda related to create a sell.
+ * 
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
+>>>>>>> develop
  *
  */
 public class Venda {
@@ -86,7 +94,11 @@ public class Venda {
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
+<<<<<<< HEAD
 	@Override
+=======
+	/*@Override
+>>>>>>> develop
 	public String toString(){
 		DecimalFormat valorTotal = new DecimalFormat("#.00");
 		if(seguro.getPessoa()!= null){
@@ -98,7 +110,11 @@ public class Venda {
 					+ seguro.getEmpresa().getRazaoSocial() + "\nValor Liquido: " + this.valorLiquido + "\nValor total: " + 
 					valorTotal.format(valorLiquido*1.0738) + "\n";
 		}
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method responsible to register a sell.
 	 * 	Print if a sell was register with success or not.

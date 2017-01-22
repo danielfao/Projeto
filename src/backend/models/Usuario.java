@@ -2,13 +2,22 @@ package backend.models;
 
 /** Class Usuario related to create an user extended from Pessoa.
  * 
+<<<<<<< HEAD
  * @author Daniel Oliveira / Maisa Rissi
+=======
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
+>>>>>>> develop
  *
  */
 public class Usuario extends Pessoa{
 	private int id;
+<<<<<<< HEAD
 	private String login;
 	private String senha;
+=======
+	private String login = "";
+	private String senha = "";
+>>>>>>> develop
 	
 	/** Constructor method without complemento attribute.
 	 * 
@@ -55,6 +64,13 @@ public class Usuario extends Pessoa{
 		cadastrarUsuario();
 	}
 	
+<<<<<<< HEAD
+=======
+	public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
+
+>>>>>>> develop
 	/** Setter method related to instance of the attribute
 	 * 
 	 * @param login
@@ -78,6 +94,13 @@ public class Usuario extends Pessoa{
 	public int getId() {
 		return id;
 	}
+<<<<<<< HEAD
+=======
+	
+	public void setId(int id){
+		this.id = id;
+	}
+>>>>>>> develop
 
 	/** Getter method related to instance of the attribute
 	 * 
@@ -99,7 +122,11 @@ public class Usuario extends Pessoa{
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
+<<<<<<< HEAD
 	@Override
+=======
+	/*@Override
+>>>>>>> develop
 	public String toString(){
 		String compl = getComplemento();
 		if (compl == null){
@@ -111,7 +138,11 @@ public class Usuario extends Pessoa{
 		return "Nome: " + getNome() + "\nCPF: " + getCpf() + "\nData de Nascimento: " + getDataNascimento() + "\nTelefone: " +
 		getTelefone() + "\nEndereco: " + getRua() + ", " + getNumero() + "\nComplemento: " + compl + "\nBairro: " + getBairro() + 
 		"\nCEP: " + getCep() + "\nCidade: " + getCidade() + "\nEstado: " + getEstado() + "\nLogin: " + getLogin() + "\n";		
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method responsible to register a user.
 	 * 	Print if an user was register with success or not.

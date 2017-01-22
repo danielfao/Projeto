@@ -1,5 +1,6 @@
 package backend.models;
 
+<<<<<<< HEAD
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,6 +11,18 @@ import java.util.List;
 /** Class Relatorio related to create reports.
  * 
  * @author Daniel Oliveira / Maisa Rissi
+=======
+//import java.io.BufferedWriter;
+//import java.io.FileWriter;
+//import java.io.IOException;
+//import java.io.Writer;
+//import java.text.DecimalFormat;
+//import java.util.List;
+
+/** Class Relatorio related to create reports.
+ * 
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
+>>>>>>> develop
  *
  */
 public class Relatorio {
@@ -20,7 +33,11 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
+<<<<<<< HEAD
 	public void gerarVendasPorFuncionario(Usuario usuario, List<Venda> vendas) throws IOException{
+=======
+	/*public void gerarVendasPorFuncionario(Usuario usuario, List<Venda> vendas) throws IOException{
+>>>>>>> develop
 		Writer arquivo = new FileWriter("vendas" + usuario.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter (arquivo);
 		
@@ -59,7 +76,11 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method responsible for creating sales reports in *.txt files of all employees.
 	 * 
@@ -67,7 +88,11 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
+<<<<<<< HEAD
 	public void gerarVendasTodosFuncionarios(List<Usuario> usuarios, List<Venda> vendas) throws IOException{
+=======
+	/*public void gerarVendasTodosFuncionarios(List<Usuario> usuarios, List<Venda> vendas) throws IOException{
+>>>>>>> develop
 		Writer arquivo = new FileWriter("vendasTotais.txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
@@ -107,7 +132,11 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method responsible for creating insurance reports that are active, in text files of regular clients.
 	 * 
@@ -115,7 +144,11 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
+<<<<<<< HEAD
 	public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
+=======
+	/*public void gerarSegurosAtivosPorClienteFisico(ClienteFisico cliente, List<Venda> vendas) throws IOException{
+>>>>>>> develop
 		Writer arquivo = new FileWriter("seguros" + cliente.getNome().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
@@ -149,7 +182,11 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method responsible for creating insurance reports that are active, in text files, by legal customer/client.
 	 * 
@@ -157,7 +194,11 @@ public class Relatorio {
 	 * @param vendas
 	 * @throws IOException
 	 */
+<<<<<<< HEAD
 	public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
+=======
+	/*public void gerarSegurosAtivosPorClienteJuridico(ClienteJuridico cliente, List<Venda> vendas) throws IOException{
+>>>>>>> develop
 		Writer arquivo = new FileWriter("seguros" + cliente.getRazaoSocial().replaceAll(" ", "") + ".txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 		
@@ -191,14 +232,22 @@ public class Relatorio {
 		
 		buffer.flush();
 		arquivo.close();
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method responsible for creating insurance reports that are inactive, in text files.
 	 * 
 	 * @param seguros
 	 * @throws IOException
 	 */
+<<<<<<< HEAD
 	public void gerarSegurosInativos (List<Seguro> seguros) throws IOException{
+=======
+	/*public void gerarSegurosInativos (List<Seguro> seguros) throws IOException{
+>>>>>>> develop
 		Writer arquivo = new FileWriter("segurosInativos.txt");
 		BufferedWriter buffer = new BufferedWriter(arquivo);
 
@@ -221,13 +270,20 @@ public class Relatorio {
 			}
 		}
 		
+<<<<<<< HEAD
 		/*if (isInativo == false){
 			buffer.write("Nao existem seguros inativos!\n");
 		}*/
+=======
+>>>>>>> develop
 		
 		System.out.println("Relatorio de seguros inativos gerado com sucesso!\n");
 
 		buffer.flush();
 		arquivo.close();
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 }

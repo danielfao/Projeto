@@ -1,19 +1,34 @@
 package backend.models;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.Scanner;
+=======
+//import java.util.Scanner;
+>>>>>>> develop
 
 /** Class ClienteFisico that extends from Pessoa.
  *  Contains extra attributes to create a regular client.
  * 
+<<<<<<< HEAD
  * @author Daniel Oliveira / Maisa Rissi
+=======
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
+>>>>>>> develop
  * 
  */
 
 public class ClienteFisico extends Pessoa {
 	private String profissao;
 	private String estadoCivil;
+<<<<<<< HEAD
 	Scanner ler = new Scanner(System.in);
+=======
+	
+	public ClienteFisico(){
+		
+	}
+>>>>>>> develop
 	
 	/** Constructor method with complemento attribute.
 	 * 
@@ -98,7 +113,11 @@ public class ClienteFisico extends Pessoa {
 	 * 
 	 * @return String all attributes in a easy way to read using the console/terminal
 	 */
+<<<<<<< HEAD
 	@Override
+=======
+	/*@Override
+>>>>>>> develop
 	public String toString(){
 		String compl = getComplemento();
 		if (compl == null){
@@ -112,7 +131,11 @@ public class ClienteFisico extends Pessoa {
 			getTelefone() + "\nProfissao: " + this.profissao + "\nEstado Civil: " + this.estadoCivil + "\nEndereco: " + 
 			getRua() + ", " + getNumero() + "\nComplemento: " + compl + "\nBairro: " + getBairro() + "\nCEP: " + getCep() + "\nCidade: " +
 			getCidade() + "\nEstado: " + getEstado() + "\n";		
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> develop
 	
 	/** Method that overrides the output of this class depending if it's using the constructor with complemento or without.
 	 * 
@@ -156,7 +179,10 @@ public class ClienteFisico extends Pessoa {
 		this.setCidade(ler.nextLine());
 		System.out.println("Estado: ");
 		this.setEstado(ler.nextLine());*/
+<<<<<<< HEAD
 		
+=======
+>>>>>>> develop
 		System.out.println("Cliente cadastrado com sucesso!\n");
 	}
 }

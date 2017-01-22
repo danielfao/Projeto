@@ -2,6 +2,7 @@ package backend.models;
 
 /** Class Veiculo related to create a vehicle.
  * 
+<<<<<<< HEAD
  * @author Daniel Oliveira / Maisa Rissi
  *
  */
@@ -15,6 +16,20 @@ public class Veiculo {
 	private long renavam;
 	private ClienteFisico clienteFisico;
 	private ClienteJuridico clienteJuridico;
+=======
+ * @author Daniel Oliveira/ Maisa Rissi/ Airton Romao Jr
+ *
+ */
+public class Veiculo {
+	private int idVeiculo=2;
+	private String modelo;
+	private String chassi;
+	private String placa;
+	private String anoFabricacao;
+	private String anoModelo;
+	private long renavam;
+	private int idPessoa;
+>>>>>>> develop
 	
 	/** Constructor method that calls a object ClienteFisico.
 	 * 
@@ -26,13 +41,18 @@ public class Veiculo {
 	 * @param renavam
 	 * @param cliente
 	 */
+<<<<<<< HEAD
 	public Veiculo(String modelo, String chassi, String placa, int anoFabricacao, int anoModelo, long renavam, ClienteFisico cliente) {
+=======
+	public Veiculo(String modelo, String chassi, String placa, String anoFabricacao, String anoModelo, long renavam, int idPessoa) {
+>>>>>>> develop
 		this.modelo = modelo;
 		this.chassi = chassi;
 		this.placa = placa;
 		this.anoFabricacao = anoFabricacao;
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
+<<<<<<< HEAD
 		this.clienteFisico = cliente;
 		cadastrarVeiculo();
 	}
@@ -58,6 +78,16 @@ public class Veiculo {
 		cadastrarVeiculo();
 	}
 	
+=======
+		this.idPessoa = idPessoa;
+		cadastrarVeiculo();
+	}
+	
+	public Veiculo() {
+		// TODO Auto-generated constructor stub
+	}
+
+>>>>>>> develop
 	/** Getter method related to instance of the attribute.
 	 * 
 	 * @return idVeiculo
@@ -118,7 +148,11 @@ public class Veiculo {
 	 * 
 	 * @return anoFabricacao
 	 */
+<<<<<<< HEAD
 	public int getAnoFabricacao() {
+=======
+	public String getAnoFabricacao() {
+>>>>>>> develop
 		return anoFabricacao;
 	}
 
@@ -126,7 +160,11 @@ public class Veiculo {
 	 * 
 	 * @param anoFabricacao
 	 */
+<<<<<<< HEAD
 	public void setAnoFabricacao(int anoFabricacao) {
+=======
+	public void setAnoFabricacao(String anoFabricacao) {
+>>>>>>> develop
 		this.anoFabricacao = anoFabricacao;
 	}
 
@@ -134,7 +172,11 @@ public class Veiculo {
 	 * 
 	 * @return anoModelo
 	 */
+<<<<<<< HEAD
 	public int getAnoModelo() {
+=======
+	public String getAnoModelo() {
+>>>>>>> develop
 		return anoModelo;
 	}
 
@@ -143,8 +185,13 @@ public class Veiculo {
 	 * 
 	 * @param anoModelo
 	 */
+<<<<<<< HEAD
 	public void setAnoModelo(int anoModelo) {
 		if(anoModelo >= anoFabricacao)
+=======
+	public void setAnoModelo(String anoModelo) {
+		if(anoModelo != anoFabricacao)
+>>>>>>> develop
 			this.anoModelo = anoModelo;
 		else
 			System.out.println("Ano modelo nao pode ser menor que ano de fabricacao");
@@ -166,6 +213,7 @@ public class Veiculo {
 		this.renavam = renavam;
 	}
 	
+<<<<<<< HEAD
 	/** Getter method related to instance of the attribute
 	 * 
 	 * @return clienteFisico
@@ -210,6 +258,16 @@ public class Veiculo {
 				
 	}
 	
+=======
+	public int getPessoa() {
+		return idPessoa;
+	}
+
+	public void setPessoa(int idPessoa) {
+		this.idPessoa = idPessoa;
+	}
+
+>>>>>>> develop
 	/** Method responsible to register a vehicle.
 	 * 	Print if an vehicle was register with success or not.
 	 * 

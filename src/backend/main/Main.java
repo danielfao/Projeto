@@ -9,7 +9,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> develop
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		Pane tmpRoot = FXMLLoader.load(getClass().getResource("/backend/views/Main.fxml"));
@@ -18,8 +22,16 @@ public class Main extends Application {
 		primaryStage.setScene(tmpScene);
 		primaryStage.show();
 	}
+<<<<<<< HEAD
 
 	public static void main(String[] args) {
 		launch(args);
 	}
+=======
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+				
+>>>>>>> develop
 }
